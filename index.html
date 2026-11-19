@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>仁爱天使内容工作台 · 首页线框</title>
+  <meta name="description" content="仁爱天使内容工作台的可点击线框原型。侧边切换内容、右侧查看分析、常驻创作参考板。">
+  <style>:root{font-family:Inter,"Microsoft YaHei","PingFang SC",sans-serif;font-size:16px;color:#282b30;background:#f6f7f8;--line:#dfe2e5;--muted:#777d85;--ink:#272b30;--soft:#f3f4f5}
+*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #6f7c8c;outline-offset:3px}button{color:inherit}button,a,input,select{touch-action:manipulation}button{background:#fff;border:1px solid var(--line);border-radius:6px;padding:9px 13px}button:hover{background:#f3f4f5}input,select,textarea{background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px 12px;color:var(--ink)}input::placeholder,textarea::placeholder{color:#8d9299}button.primary{color:#fff;background:#363b43;border-color:#363b43}button.primary:hover{background:#24282e}button.quiet{border:0;background:transparent;color:#60666e;padding:8px}button.text-button{border:0;background:transparent;color:#4d5864;padding:4px 0;text-align:left}button.small{font-size:.875rem;padding:6px 9px}button.wide{width:100%}button[aria-pressed="true"]{background:#e8ebee;border-color:#b7bec7}.app{display:flex;min-height:100vh}.navigation{position:fixed;inset:0 auto 0 0;width:210px;padding:27px 17px;background:#fff;border-right:1px solid var(--line);z-index:5;display:flex;flex-direction:column}.identity{display:flex;gap:10px;align-items:center;margin:0 5px 34px}.brand-mark{display:grid;place-items:center;background:#ebedef;border:1px solid #cdd2d8;border-radius:8px;width:38px;height:40px;font-size:21px;font-weight:700}.identity strong{display:block;font-size:1rem}.identity div>span{display:block;color:var(--muted);font-size:.75rem;margin-top:5px}.nav-label{margin:0 10px 12px;color:#8a9098;font-size:.8125rem}.nav-item{display:flex;width:100%;gap:10px;align-items:center;border:1px solid transparent;background:transparent;text-align:left;margin:4px 0;padding:12px 11px;font-size:.9375rem;border-radius:7px;min-height:47px}.nav-item.active{background:#e9ecef;border-color:#e2e5e8;font-weight:600}.nav-icon{display:inline-block;width:20px;color:#7d838b;font-size:18px;text-align:center}.nav-count{margin-left:auto;font-size:.75rem;color:#8a9098;font-weight:400}.nav-divider{height:1px;background:var(--line);margin:25px 10px}.navigation-foot{margin-top:auto;padding:28px 9px 5px;color:#9398a0;font-size:.75rem;line-height:1.8}.version{border:1px solid var(--line);padding:4px 8px;border-radius:4px}.navigation-foot p{margin-bottom:0}.shell{margin-left:210px;width:calc(100% - 210px);min-width:0}.topbar{height:69px;padding:0 27px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line)}.breadcrumb{display:flex;gap:13px;align-items:center;font-size:.875rem;color:#858b93}.breadcrumb strong{color:#454b53;font-weight:500}.breadcrumb>span{color:#c2c6cb}.topbar-actions{display:flex;gap:22px;align-items:center;font-size:.875rem}.user-avatar{display:grid;place-items:center;border:1px solid var(--line);background:#f2f3f4;border-radius:50%;width:32px;height:32px;font-size:.8125rem}.prototype-banner{display:flex;align-items:center;gap:12px;font-size:.8125rem;color:#7d838b;background:#fafafa;border-bottom:1px solid var(--line);padding:10px 27px;min-height:44px;line-height:1.6}.outline-badge{padding:1px 6px;border:1px solid #ccd1d7;border-radius:4px;white-space:nowrap;color:#666e78;font-size:.75rem}.workspace{display:flex;min-height:calc(100vh - 113px);align-items:stretch}.main-content{padding:28px;flex:1;min-width:0}.page-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:22px}.eyebrow{font-size:.75rem;letter-spacing:.08em;color:#8b9199;margin:0 0 8px}.page-heading h1{font-size:1.5rem;letter-spacing:-.03em;margin:0 0 9px;font-weight:650}.page-description{font-size:.875rem;line-height:1.7;color:#818790;margin:0}.heading-action{flex-shrink:0}.controls{background:#fff;border:1px solid var(--line);padding:16px;margin-bottom:22px;border-radius:8px}.search-line{display:flex;gap:9px}.search-box{flex:1;min-width:100px;position:relative}.search-box input{width:100%;padding-left:34px;font-size:.875rem}.search-symbol{position:absolute;left:12px;top:10px;color:#8c929a}.search-line select{font-size:.875rem;max-width:145px;appearance:none;padding-right:28px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m2 2 4 4 4-4' fill='none' stroke='%23777' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center}.filter-line{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px;align-items:center}.filter-label{font-size:.8125rem;color:#8a9099;margin-right:3px}.filter-pill{font-size:.8125rem;border-radius:4px;padding:5px 8px;border-color:transparent;background:#f7f8f9;color:#777f88}.filter-pill.active{border-color:#b8c0c9;color:#343b45;background:#e9edf0}.section-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 15px;font-size:.875rem;color:#787f88}.section-toolbar strong{color:#4c535d;font-weight:500}.sync-state{font-size:.75rem;color:#9298a1}.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:17px}.content-card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;transition:border-color .15s}.content-card.selected{border-color:#75808e;box-shadow:0 0 0 1px #75808e}.card-open{display:block;width:100%;text-align:left;padding:0;border:0;border-radius:0;background:#fff}.card-open:hover{background:#fafbfc}.video-placeholder{height:135px;position:relative;border-bottom:1px solid #e6e8ea;display:grid;place-items:center;background:repeating-linear-gradient(135deg,#f5f6f7,#f5f6f7 8px,#f0f2f3 8px,#f0f2f3 9px);color:#9da4ad}.play-mark{display:grid;place-items:center;width:42px;height:42px;border:1px solid #c9cfd5;border-radius:50%;font-size:17px;padding-left:3px;background:#f9fafb}.placeholder-label{position:absolute;top:10px;left:11px;font-size:.75rem;color:#9299a2}.video-duration{position:absolute;right:9px;bottom:9px;font-size:.75rem;color:#737b85;background:#ffffffd9;border:1px solid #dfe3e8;padding:2px 5px;border-radius:3px}.card-body{padding:14px 15px 12px}.card-topline{display:flex;justify-content:space-between;gap:6px;align-items:center;margin-bottom:9px}.tag{display:inline-block;font-size:.75rem;line-height:1.4;padding:3px 5px;color:#6d7681;background:#f2f4f6;border:1px solid #e8ebee;border-radius:3px}.example-label{font-size:.75rem;color:#9a9fa7}.card-body h2{font-size:1rem;font-weight:600;line-height:1.65;margin:0 0 9px;min-height:52px}.card-author{font-size:.75rem;color:#9399a2;margin-bottom:11px}.card-reason{font-size:.8125rem;line-height:1.65;color:#6c7581;margin:0;min-height:43px}.card-bottom{display:flex;align-items:center;justify-content:space-between;padding:11px 15px;border-top:1px solid #eef0f2;font-size:.75rem;color:#9299a2;gap:7px}.card-add{font-size:.8125rem;padding:5px 8px}.card-add.added{border-color:#bfc7cf;background:#edf0f2;color:#667381}.reference-board{width:270px;flex-shrink:0;border-left:1px solid var(--line);background:#fff;padding:23px 18px;position:sticky;top:0;align-self:flex-start;height:calc(100vh - 113px);overflow-y:auto}.board-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}.board-heading h2{font-size:1rem;margin:0;font-weight:600}.board-caption{font-size:.75rem;color:#969da6;line-height:1.65;margin:8px 0 24px}.board-group{padding:0 0 22px;margin-bottom:20px;border-bottom:1px solid #eceef0}.group-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.group-heading h3{font-size:.8125rem;line-height:1.6;margin:0;font-weight:600;color:#717a85}.group-heading .small{font-size:.75rem;padding:3px 6px}.board-task{font-size:.875rem;line-height:1.75;margin:0 0 8px;overflow-wrap:anywhere}.muted{color:#959ca5}.board-empty{border:1px dashed #d8dde2;border-radius:5px;background:#fcfcfd;padding:16px 11px;font-size:.8125rem;line-height:1.8;color:#9aa1aa;text-align:center}.board-item{border:1px solid #e0e4e8;border-radius:5px;margin-top:9px;padding:10px;background:#fafbfc}.board-item-header{display:flex;gap:6px;align-items:flex-start;justify-content:space-between}.board-item-title{font-size:.8125rem;line-height:1.6;color:#535e6b;margin:0}.remove-item{padding:0 3px;border:0;background:transparent;font-size:17px;line-height:1.3;color:#9ca4ad}.board-item-note{font-size:.75rem;line-height:1.7;color:#929aa4;margin:6px 0 0}.board-footnote{font-size:.75rem;color:#969ea7;line-height:1.8;margin:10px 0}.board-group:last-of-type{border-bottom:0}.detail-panel{background:#fff;border-left:1px solid var(--line);width:350px;flex-shrink:0;padding:22px 19px;position:sticky;top:0;align-self:flex-start;height:calc(100vh - 113px);overflow-y:auto}.detail-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;font-size:.875rem;color:#69727d}.close-detail{font-size:22px;padding:0 7px;border:0;background:transparent;color:#7c8590}.detail-panel h2{font-size:1.125rem;line-height:1.65;margin:15px 0 8px}.detail-meta{font-size:.75rem;color:#949ba5;line-height:1.8}.detail-panel .video-placeholder{border:1px solid #e2e6ea;border-radius:5px;height:157px}.detail-tabs{display:flex;margin:19px 0 20px;border-bottom:1px solid var(--line)}.detail-tab{font-size:.8125rem;padding:9px 6px;flex:1;border:0;border-radius:0;border-bottom:2px solid transparent;background:#fff;color:#9299a3}.detail-tab.active{color:#3b4552;border-color:#535e6c}.analysis-block{padding-bottom:20px;margin-bottom:17px;border-bottom:1px solid #eceef0}.analysis-block h3{font-size:.875rem;margin:0 0 8px;font-weight:600}.analysis-block p{font-size:.875rem;line-height:1.9;color:#7c8590;margin:0 0 10px}.evidence{background:#f6f7f9;padding:10px;font-size:.75rem;line-height:1.8;color:#818b97;border-left:2px solid #c2cad3}.detail-notice{font-size:.75rem;line-height:1.8;color:#939ca7;margin:12px 0}.pattern-button{font-size:.8125rem;width:100%;margin-top:12px}.match-card{border:1px solid #e1e6eb;padding:13px;border-radius:5px;margin-bottom:12px}.match-card h3{font-size:.875rem;margin:0 0 8px}.match-card p{font-size:.8125rem;color:#89939f;line-height:1.8}.plain-list{padding-left:20px;color:#7a8591;font-size:.875rem;line-height:1.9}.empty-state{text-align:center;border:1px dashed #cfd6dd;padding:45px 20px;border-radius:8px;color:#85909b;background:#fcfcfd;margin-top:20px}.empty-state h2{font-size:1.125rem;color:#66717e}.empty-state p{font-size:.875rem;line-height:1.9}.wire-panel{background:white;border:1px solid var(--line);border-radius:8px;padding:23px;margin-bottom:20px}.wire-panel h2{font-size:1.0625rem;margin:0 0 15px}.wire-panel p{line-height:1.9;font-size:.875rem;color:#858e99}.wire-panel textarea{width:100%;min-height:120px;resize:vertical;font-size:1rem;line-height:1.7}.task-summary{font-size:.875rem;line-height:1.85;color:#737e8b}.draft-flow{display:flex;gap:7px;flex-wrap:wrap;margin:20px 0}.draft-flow span{padding:9px 13px;border:1px solid var(--line);background:#fafbfc;color:#8a949f;font-size:.8125rem;border-radius:4px}.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);padding:13px 20px;border:1px solid #4b5561;background:#363f4b;color:white;border-radius:7px;z-index:50;box-shadow:0 6px 25px #0002;font-size:.875rem;max-width:70vw;line-height:1.6}dialog{border:1px solid #cfd6dd;border-radius:10px;padding:28px;max-width:570px;width:calc(100% - 40px);color:var(--ink);box-shadow:0 12px 50px #0002}dialog::backdrop{background:#202a3840}dialog h2{font-size:1.125rem;margin:0 0 18px}dialog p{font-size:.875rem;line-height:1.9;color:#808b97}dialog label{font-size:.875rem;display:block;margin:14px 0 8px}dialog input,dialog textarea{width:100%;line-height:1.7}dialog textarea{min-height:110px;resize:vertical}.dialog-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:22px}.material-option{display:block;width:100%;text-align:left;margin-top:10px;padding:15px;font-size:.875rem}.material-option span{display:block;font-size:.75rem;color:#909aa6;line-height:1.8;margin-top:7px}.summary-row{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.count-chip{font-size:.8125rem;color:#7f8995;padding:6px 10px;border:1px solid var(--line);border-radius:4px}.source-tools{display:flex;justify-content:flex-end;margin-top:11px}.load-message{font-size:.8125rem;color:#929ba6;text-align:center;margin:27px 0}[hidden]{display:none!important}
+@media(min-width:1650px){.navigation{width:225px}.shell{margin-left:225px;width:calc(100% - 225px)}.reference-board{width:290px}.detail-panel{width:390px}.main-content{padding:32px}}
+@media(max-width:1250px){.navigation{width:176px;padding:24px 10px}.identity{gap:7px;margin-left:3px}.brand-mark{width:30px;height:34px}.identity strong{font-size:.9375rem}.identity div>span{font-size:.6875rem}.shell{margin-left:176px;width:calc(100% - 176px)}.reference-board{width:235px;padding:20px 14px}.detail-panel{width:305px;padding:20px 15px}.main-content{padding:23px 20px}.card-grid{grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}.nav-item{padding:12px 8px;gap:7px}.nav-count{display:none}.page-heading h1{font-size:1.375rem}.search-line{flex-wrap:wrap}.search-box{flex-basis:100%}.prototype-banner{padding-left:20px}.topbar{padding:0 20px}.heading-action{font-size:.8125rem;padding:8px}}
+@media(max-width:1000px){.navigation{width:153px;padding-left:8px;padding-right:8px}.shell{margin-left:153px;width:calc(100% - 153px)}.identity{gap:6px}.brand-mark{display:none}.identity{padding-left:9px}.nav-item{font-size:.875rem}.reference-board{width:210px;padding:18px 12px}.main-content{padding:20px 15px;min-width:220px}.detail-panel{width:285px}.detail-panel:not([hidden])~.reference-board{width:200px}.workspace{overflow-x:auto}.page-heading{flex-direction:column}.card-grid{grid-template-columns:1fr}.prototype-banner{font-size:.75rem;padding:8px 15px}.topbar{padding:0 15px}.board-heading h2{font-size:.9375rem}.board-caption{margin-bottom:18px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Account filters remain part of the shared content feed. */
+.account-filter{margin-top:16px;padding-top:15px;border-top:1px solid #eceef0}.account-filter-heading{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px}.account-filter-heading .filter-label{font-size:.875rem}.account-filter-note{font-size:.75rem;color:#8d96a0}.account-options{display:flex;gap:8px;flex-wrap:wrap}.account-pill{display:inline-flex;align-items:center;gap:9px;font-size:.875rem;padding:7px 10px;background:#fff;border-color:#dfe4e9;border-radius:5px}.account-pill.active{background:#e8edf1;color:#35414e;border-color:#aab5c0}.account-count{font-size:.75rem;color:#7e8a97}.reason-label{display:block;color:#515e6c;font-size:.75rem;font-weight:600;margin-bottom:4px}.card-reason{font-size:.875rem;line-height:1.8;min-height:65px}.account-directory{margin:20px 0;border:1px solid #e0e5e9;border-radius:6px;overflow:hidden}.account-directory-row{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #e8edf0;gap:12px;font-size:.875rem}.account-directory-row:last-child{border-bottom:0}.account-directory-row strong{font-weight:500}.account-directory-row span{color:#8c97a2;font-size:.8125rem}.filter-pill,.detail-tab,.board-item-title,.board-task,.group-heading h3{font-size:.875rem}
+
+/* Video and core insight share the default detail view. */
+.detail-panel .detail-video{height:112px}.detail-panel h2.detail-title{font-size:1rem;line-height:1.65;margin:12px 0 5px}.compact-meta{font-size:.75rem;margin-bottom:15px}.core-analysis{padding:13px 0 15px;border-top:1px solid #e9edf0;border-bottom:1px solid #e9edf0}.core-analysis h3{font-size:.875rem;margin:0 0 7px;font-weight:600}.core-analysis>p{font-size:.875rem;color:#717d8a;line-height:1.8;margin:0 0 12px}.core-design{margin:0 0 12px;display:flex;gap:7px;flex-direction:column}.core-design-label{font-size:.75rem;color:#88939f}.core-design strong{font-size:.875rem;font-weight:500;color:#4a5868}.match-overview{padding:13px 0;border-bottom:1px solid #e9edf0}.match-overview>strong{font-size:.875rem;font-weight:600}.match-overview>span{float:right;font-size:.75rem;color:#8b96a1;border:1px solid #dfe5ea;border-radius:3px;padding:2px 5px}.match-overview>p{font-size:.8125rem;line-height:1.8;color:#8a95a1;margin:7px 0 0}.deeper-label{font-size:.75rem;color:#97a0aa;margin:17px 0 5px}.detail-expander{border-bottom:1px solid #e6ebef}.detail-expander>summary{position:relative;list-style:none;cursor:pointer;padding:13px 19px 13px 0;font-size:.875rem;line-height:1.7;color:#5c6979}.detail-expander>summary::-webkit-details-marker{display:none}.detail-expander>summary:after{content:'+';position:absolute;right:1px;top:12px;font-size:17px;color:#87929f}.detail-expander[open]>summary:after{content:'−'}.detail-expander>summary:focus-visible{outline:2px solid #758493;outline-offset:2px}.expander-body{padding:2px 0 14px}.expander-body h3{font-size:.875rem;margin:14px 0 7px;font-weight:600}.expander-body p{font-size:.875rem;color:#7b8795;line-height:1.9;margin:0 0 10px}.expander-body .evidence{margin:10px 0}.expander-body .match-card{padding:11px;margin-top:11px}.detail-collect{font-size:.8125rem;margin-top:17px}.detail-header{margin-bottom:12px}
+
+/* Compare directions before opening a complete script. */
+.creation-steps{display:flex;list-style:none;padding:0;margin:0 0 23px;border:1px solid #dce2e8;background:#fff;border-radius:6px;overflow:hidden}.creation-steps li{flex:1;padding:13px 10px;font-size:.875rem;text-align:center;color:#8a949f;border-right:1px solid #e4e9ed}.creation-steps li:last-child{border-right:0}.creation-steps .current{background:#e9eef2;color:#384858;font-weight:600}.creation-steps .complete{color:#647584}.creation-brief textarea{min-height:85px}.creation-brief-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:13px;margin:13px 0;font-size:.875rem;color:#7c8a98}.creation-prototype-note{font-size:.8125rem!important;line-height:1.8;color:#8b97a3!important}.creation-basis{margin:15px 0;border-top:1px solid #e6ebef;padding-top:11px}.creation-basis summary{font-size:.875rem;cursor:pointer;color:#6a7b8c}.basis-columns{display:grid;grid-template-columns:1fr 1fr;gap:22px}.basis-columns h3{font-size:.875rem;margin:16px 0 9px}.basis-columns ul{padding-left:18px;margin:0}.basis-columns li{font-size:.875rem;line-height:1.7;color:#647485;margin-bottom:12px}.basis-columns li span{display:block;font-size:.8125rem;color:#8c98a5}.creation-stale{padding:13px 0;border-top:1px solid #b5bec7;border-bottom:1px solid #b5bec7;font-size:.875rem;line-height:1.8;color:#626f7e}.creation-placeholder{padding:28px;border:1px dashed #cdd7df;border-radius:7px;background:#fbfcfd;color:#8b96a2}.creation-placeholder h2{font-size:1.125rem;color:#657585}.creation-placeholder p{font-size:.875rem;line-height:1.9}.creation-section-heading{display:flex;align-items:flex-start;gap:16px;justify-content:space-between;margin:25px 0 17px}.creation-section-heading h2{font-size:1.125rem;margin:0 0 7px}.creation-section-heading p{font-size:.875rem;line-height:1.8;color:#8a96a2;margin:0;overflow-wrap:anywhere}.direction-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:15px}.direction-card{padding:21px;background:white;border:1px solid #dce3e9;border-radius:7px;display:flex;flex-direction:column}.direction-card h3{font-size:1.0625rem;line-height:1.7;margin:0 0 12px}.direction-card h4{font-size:.875rem;color:#566779;margin:16px 0 8px;font-weight:600}.direction-card p,.direction-card li{font-size:.875rem;line-height:1.9;color:#7b8998;margin:0}.direction-card ol{padding-left:21px;margin:0}.direction-card .direction-gap{font-size:.8125rem;color:#97a1ac;margin:13px 0 19px}.direction-card button{margin-top:auto}.draft-label{display:block;font-size:.875rem;margin:16px 0 8px;color:#657586}.wire-panel textarea.draft-field{min-height:70px;font-size:.9375rem;line-height:1.8}.script-editor .wire-panel>h3{font-size:1rem;margin:0 0 14px}.script-table-scroll{overflow-x:auto}.script-table{width:100%;min-width:640px;border-collapse:collapse;font-size:.875rem;table-layout:fixed}.script-table th,.script-table td{border:1px solid #dce3e9;padding:9px;text-align:left;vertical-align:top}.script-table th{font-weight:500;background:#f3f6f8;color:#66798b}.script-table th:first-child{width:100px}.script-table td strong{display:block;font-size:.8125rem;font-weight:500;color:#7b8a99;margin-bottom:12px}.script-table td input{width:100%;padding:6px;font-size:.8125rem}.script-table td textarea{width:100%;min-height:120px!important;resize:vertical;font-size:.875rem!important;padding:7px;line-height:1.8;background:#fcfdfe}.script-table td:last-child textarea{min-height:90px!important}.draft-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:8px 0 27px}.draft-footer p{font-size:.8125rem;color:#8b96a2}.draft-footer>div{display:flex;gap:10px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}button:disabled{opacity:.5}
+@media(max-width:1100px){.direction-grid{grid-template-columns:1fr}.basis-columns{grid-template-columns:1fr}.creation-section-heading{flex-wrap:wrap}}
+
+.creation-task-fold{margin-bottom:21px;border:1px solid #dce3e9;border-radius:7px;background:#fff}.creation-task-fold>summary{padding:14px 17px;cursor:pointer;font-size:.875rem;color:#617182;line-height:1.8;overflow-wrap:anywhere}.creation-task-fold .creation-brief{border:0;border-top:1px solid #e9edf1;margin-bottom:0;border-radius:0 0 7px 7px}.direction-card .direction-angle{min-height:75px}@media(min-width:951px) and (max-width:1100px){.direction-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Story-centered material intake, with a separate confirmation step. */
+.library-summary{display:flex;flex-wrap:wrap;gap:13px 25px;padding:15px 17px;background:#fff;border:1px solid #dfe5ea;border-radius:6px;margin-bottom:18px;font-size:.875rem;color:#84909e}.library-summary strong{color:#4f6071;font-weight:600;margin-left:5px}.library-search{width:100%;font-size:.875rem}.library-story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:17px}.library-story-card{padding:21px;background:#fff;border:1px solid #dce4eb;border-radius:7px}.story-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.story-symbol{display:grid;place-items:center;border:1px solid #dce4eb;background:#f5f7f9;border-radius:6px;width:40px;height:40px;font-size:23px;color:#8795a4}.library-story-card h2{font-size:1.0625rem;line-height:1.7;margin:0 0 10px}.library-story-card>p{font-size:.875rem;line-height:1.85;color:#8894a1;min-height:48px}.story-file-types{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0}.story-file-types span{font-size:.8125rem;color:#7c8a99;padding:5px 8px;border:1px solid #e1e7ec;border-radius:4px}.story-card-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:15px;border-top:1px solid #e7edf1;font-size:.8125rem;color:#8d99a6}.library-note{font-size:.8125rem!important;line-height:1.9;color:#8c98a5!important;margin-top:22px}.library-back{font-size:.875rem;margin-bottom:20px}.library-asset-row{display:flex;gap:17px;padding:18px;background:#fff;border:1px solid #dfe6eb;border-radius:6px;margin:14px 0;align-items:flex-start}.asset-kind{font-size:.8125rem;color:#8795a4;padding:13px 8px;min-width:52px;text-align:center;border:1px solid #e3e9ee;border-radius:5px;background:#f6f8fa}.asset-information{flex:1;min-width:0}.asset-information h2{font-size:1rem;line-height:1.7;margin:0 0 7px;overflow-wrap:anywhere}.asset-information p{font-size:.8125rem;color:#8b98a6;line-height:1.8;margin:0 0 9px}.asset-tags{display:flex;gap:5px;flex-wrap:wrap}.asset-status{display:inline-block;font-size:.75rem;margin-top:9px;padding:2px 5px;border:1px solid #d9e2ea;border-radius:3px;color:#8191a0}.asset-actions{display:flex;flex-direction:column;gap:8px}.asset-actions button{white-space:nowrap}.library-upload-zone{border:1px dashed #c4cfd9;border-radius:6px;padding:18px;cursor:pointer;background:#f8fafc}.library-upload-zone strong,.library-upload-zone span{display:block}.library-upload-zone span{font-size:.8125rem;color:#8c98a5;margin:8px 0 13px;line-height:1.8}.library-upload-zone input{font-size:.8125rem;width:100%;padding:7px}.library-file-list p{font-size:.8125rem;line-height:1.8;color:#7e8d9c;overflow-wrap:anywhere;margin:6px 0}#library-story-select,#library-usage{width:100%;font-size:.875rem;line-height:1.7}dialog label.library-check{display:flex;gap:9px;align-items:flex-start;font-size:.8125rem;line-height:1.9}.library-check input{width:16px;height:16px;margin-top:5px;flex-shrink:0}.library-text-preview{white-space:pre-wrap;overflow-wrap:anywhere;background:#f6f8fa;border:1px solid #e1e7ed;border-radius:5px;padding:15px;max-height:310px;overflow:auto;font-family:inherit;font-size:.875rem;line-height:1.9;color:#687a8c}.library-media-preview{display:grid;place-items:center;min-height:135px;background:#f2f5f8;border:1px solid #dde5ec;border-radius:5px;color:#8c9aa8}.material-select-story{margin:19px 0}.material-select-story h3{font-size:.875rem;color:#78899a;margin:0 0 10px}#dialog{max-height:90vh;overflow:auto}.library-assets{margin-top:22px}@media(max-width:1100px){.library-asset-row{flex-wrap:wrap}.asset-actions{flex-direction:row;flex-wrap:wrap;width:100%;padding-left:69px}.library-story-grid{grid-template-columns:1fr}}
+</style>
+  <style>.scope-overview{display:flex;justify-content:space-between;align-items:center;gap:16px;border:1px solid #ccd4dc;border-radius:6px;background:#fff;padding:16px;margin:0 0 18px;font-size:.875rem}.scope-overview strong,.scope-overview span{display:block}.scope-overview span{margin-top:8px;color:#536274}.scope-overview p{line-height:1.8;color:#657181;margin:8px 0 0}.scope-overview button{flex-shrink:0}.scope-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.scope-tabs button{flex:1;min-width:100px}.scope-tabs .active{background:#343c46;color:white}.scope-status-panel{padding:18px;border:1px solid #cbd4dd;border-radius:6px;background:#f6f8fa}.scope-manager h3{font-size:1rem;margin:0 0 14px;color:#344252}.scope-metrics{display:flex;gap:20px;flex-wrap:wrap;font-size:.875rem}.scope-metrics strong{font-size:1.25rem}.scope-status-panel p,.scope-list>p,.scope-manager>p{font-size:.875rem;line-height:1.9;color:#5e6d7d}.scope-errors,.scope-removed{border:1px solid #d6dee5;padding:15px;margin:15px 0;border-radius:5px;font-size:.875rem}.scope-errors summary,.scope-removed summary{cursor:pointer;font-weight:600;color:#394b5d}.scope-errors>div{padding:16px 0 0}.scope-errors p{font-size:.875rem;line-height:1.8;color:#607080}.scope-section-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:26px}.scope-section-title h3{margin:0}.scope-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:18px 0;border-bottom:1px solid #e1e6eb}.scope-row>div:first-child{min-width:0;flex:1}.scope-row strong{font-size:.9375rem;color:#344252}.scope-row p{font-size:.875rem;line-height:1.9;color:#657384;margin:8px 0 0;overflow-wrap:anywhere}.scope-row-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;max-width:190px}.scope-row-actions button{font-size:.875rem}.scope-badge{display:inline-block;font-size:.8125rem;border:1px solid #d0d9e1;padding:3px 7px;border-radius:4px;color:#4f6173;margin:0 0 0 10px}.scope-url{font-size:.8125rem}.scope-suggestions{padding:18px;background:#f5f7f9;border-radius:5px;margin-top:20px;font-size:.875rem}.scope-suggestions p{line-height:1.8;color:#637184}.scope-suggestions button{margin:5px 5px 0 0}.scope-form-error{color:#943b37!important;font-size:.875rem!important;min-height:20px}.scope-match{font-size:.8125rem;color:#465e70;border-top:1px solid #e0e6ec;padding-top:9px;line-height:1.7}.scope-feed-note{font-size:.875rem;color:#5a6d7d;line-height:1.8;margin:15px 0}.scope-empty{padding:22px;background:#f6f8fa}@media(max-width:700px){.scope-overview,.scope-row{flex-direction:column}.scope-row-actions{max-width:none}.scope-metrics{gap:12px}}
+.institution-fit{padding:16px 0;border-bottom:1px solid #dce3e9}.fit-heading{display:flex;justify-content:space-between;gap:8px;align-items:center}.fit-heading h3{font-size:.9375rem;margin:0}.fit-heading>span{font-size:.8125rem;border:1px solid #cbd5df;border-radius:4px;padding:3px 6px;color:#506477}.fit-stars{font-size:1.2rem;letter-spacing:2px;color:#536475;margin:14px 0}.fit-stars strong{display:block;font-size:.875rem;letter-spacing:0;margin-top:7px;font-weight:500}.institution-fit p{font-size:.875rem;line-height:1.85;color:#607286;margin:10px 0}.fit-basis{background:#f5f7f9;border:1px solid #e1e6ec;border-radius:5px;padding:12px;font-size:.875rem}.fit-basis p{overflow-wrap:anywhere;margin:8px 0}.fit-basis>strong{font-size:.875rem;color:#3e5265}.fit-actions{display:flex;gap:10px;margin:14px 0}.analysis-evidence-note{font-size:.8125rem!important;line-height:1.8!important;color:#718094!important}.fit-preview{margin-top:14px;font-size:.875rem;color:#5c6f82}.fit-preview summary{cursor:pointer;line-height:1.8}.fit-preview button{font-size:.8125rem;padding:7px;margin:4px 4px 4px 0}
+.story-recommendations{margin-top:20px;border-top:1px solid #dce3e9;padding-top:17px}.story-recommendations h4{font-size:.9375rem;margin:0 0 10px;color:#354d63}.institution-fit p.story-recommendation-scope{font-size:.8125rem;color:#51697e;margin:7px 0}.institution-fit p.story-recommendation-rule{font-size:.8125rem;color:#6d7f90;line-height:1.8}.story-recommendation-card{border:1px solid #d8e1e9;border-radius:6px;padding:13px;margin:13px 0;background:#fff}.story-recommendation-heading{display:flex;gap:8px;align-items:flex-start;justify-content:space-between}.story-recommendation-heading strong{font-size:.875rem;color:#354d63;line-height:1.7;overflow-wrap:anywhere}.story-recommendation-heading span{font-size:.75rem;white-space:nowrap;border:1px solid #ccd8e1;padding:3px 5px;border-radius:4px;color:#49647a}.institution-fit .story-recommendation-card p{font-size:.8125rem;line-height:1.85;color:#5e7285;overflow-wrap:anywhere}.story-recommendation-card button{width:100%;margin-top:3px}.story-recommendation-empty{padding:15px;background:#f4f7f9;color:#5e7183;font-size:.875rem;line-height:1.8}.story-picker button[aria-pressed="true"]{border-color:#7e94a7;background:#eef3f6}
+.story-direction-card>.tag{align-self:flex-start;margin-bottom:14px}.direction-expression{border-top:1px solid #dde4eb;border-bottom:1px solid #dde4eb;padding:13px 0}.direction-expression span,.direction-expression strong{display:block}.direction-expression span{font-size:.8125rem;color:#66798d;margin-bottom:8px}.direction-expression strong{font-size:1rem;color:#354c63;line-height:1.8}.direction-card .direction-asset-list{list-style:none;padding:0;margin:0}.direction-asset-list li{border-bottom:1px solid #e7ecf0;padding:7px 0;overflow-wrap:anywhere}.direction-asset-list li span{display:block;font-size:.8125rem;color:#63798e}.direction-structure{margin:18px 0;color:#596f83;font-size:.875rem;line-height:1.8}.direction-structure summary{cursor:pointer}.direction-structure ol{margin-top:10px}.direction-availability{font-size:.875rem;line-height:1.9;color:#576c80;padding:15px;border:1px solid #d5dfe8;background:#f7f9fb}.direction-story-summary{padding:18px;background:#fff;border:1px solid #cbd8e2;border-radius:6px;margin-bottom:20px;color:#3c536a;overflow-wrap:anywhere}.direction-story-summary strong{font-size:1rem}.direction-story-summary p{font-size:.875rem;line-height:1.9;margin:10px 0 0}.direction-picker button[aria-pressed="true"]{background:#eaf0f5;border-color:#849aad}
+.revision-toolbar{padding:17px;border:1px solid #c6d3df;border-radius:6px;background:#fff;margin-bottom:22px}.revision-toolbar strong{font-size:1rem;color:#354e66}.revision-toolbar p{font-size:.875rem;line-height:1.8;color:#596f85;margin:8px 0}.revision-toolbar-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.revision-toolbar-actions button{font-size:.875rem}.revision-prototype-note{font-size:.8125rem!important;line-height:1.8!important;color:#647b90!important}.revision-shot{width:100%;margin-bottom:12px!important;padding:6px 2px!important;font-size:.8125rem!important}.revision-dialog select{width:100%;font-size:.875rem}.revision-original{margin:15px 0;font-size:.875rem;color:#546c81}.revision-original summary{cursor:pointer}.revision-original pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.9;max-height:200px;overflow:auto;padding:12px;background:#f4f7f9;border:1px solid #dbe3eb;border-radius:5px}.revision-comparison{border-bottom:1px solid #dce4eb;margin:20px 0;padding-bottom:18px}.revision-comparison h3{font-size:1rem;color:#3b536b}.revision-comparison textarea{min-height:110px;font-size:.875rem;line-height:1.9}#revision-error{color:#8d3a35}
+textarea.draft-export-preview{height:320px;font-size:.875rem;line-height:1.9;font-family:inherit;resize:vertical;background:#f8fafc}.export-download-link{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border:1px solid #363b43;background:#363b43;border-radius:6px;color:#fff;text-decoration:none;font-size:.875rem}.export-actions{flex-wrap:wrap}.export-download-note{font-size:.8125rem!important;color:#5d7388!important}.draft-export-status{font-size:.875rem;line-height:1.8;color:#425f78;padding:10px;border:1px solid #d7e0e8;border-radius:5px;background:#f5f8fa}
+</style>
+  
+  
+  
+  
+  
+  
+  
+</head>
+<body>
+<div class="app">
+  <aside class="navigation" aria-label="工作台导航">
+    <div class="identity"><span class="brand-mark">仁</span><div><strong>仁爱天使</strong><span>公益内容工作台</span></div></div>
+    <p class="nav-label">内容发现</p>
+    <nav id="category-nav"></nav>
+    <div class="nav-divider"></div>
+    <p class="nav-label">我的工作</p>
+    <button class="nav-item" data-page="creation"><span class="nav-icon">▤</span><span>创作空间</span></button>
+    <button class="nav-item" data-page="materials"><span class="nav-icon">▧</span><span>自有素材库</span></button>
+    <div class="navigation-foot"><span class="version">线框原型 v0.11</span><p>先确认信息和操作<br>视觉细节后续调整</p></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><div class="breadcrumb">工作台 <span>/</span> <strong id="breadcrumb">全站热点</strong></div><div class="topbar-actions"><button id="prototype-info" class="quiet">原型说明</button><span class="user-avatar" aria-label="机构创作者">创</span></div></header>
+    <div class="prototype-banner"><span class="outline-badge">可点击线框</span><span>所有内容与指标均为示例，仅用于讨论布局和交互，尚未接入抖音。</span></div>
+    <div class="workspace">
+      <main class="main-content" id="main-content"></main>
+      <aside id="detail-panel" class="detail-panel" aria-label="内容详情" hidden></aside>
+      <aside class="reference-board" id="reference-board" aria-label="本次创作参考板"></aside>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="dialog"><div id="dialog-content"></div></dialog>
+<script>'use strict';
+const categories = [
+  {id:'trends',name:'全站热点',icon:'◫',en:'DISCOVER / TRENDING',description:'从近期话题中发现值得进一步研究的内容机会',filters:['全部','教育成长','生活观察','公共议题']},
+  {id:'charity',name:'公益议题',icon:'◇',en:'DISCOVER / CHARITY',description:'围绕公益细分议题，观察内容表达与公众关注',filters:['全部','助学教育','社区关怀','公益参与']},
+  {id:'creators',name:'公益达人',icon:'◎',en:'DISCOVER / CREATORS',description:'关注公益创作者的新作品，寻找可以借鉴的表达设计',filters:['全部','人物故事','真实行动','日常记录']},
+  {id:'organizations',name:'公益机构',icon:'▥',en:'DISCOVER / ORGANIZATIONS',description:'观察相近工作条件下，其他机构如何呈现项目与真实故事',filters:['全部','项目记录','人物访谈','参与引导']}
+];
+const seeds = {
+trends:[['一件小事，如何讲出一个人的改变','教育成长','从一个具体行动切入，而不是先介绍主题。','用行动开场'],['把一天的时间，交还给故事中的人','生活观察','用时间线组织信息，让观众跟随人物经历。','按时间线展开'],['一个问题，听见不同人的回答','公共议题','以共同问题串联多个人的真实回应。','问题串联'],['从一个细节开始，理解一段经历','生活观察','先给出可观察细节，再逐步补充背景。','细节揭示背景'],['成长的转折，藏在一次普通选择里','教育成长','围绕一次选择呈现动机和行动。','围绕选择讲述'],['让观众看见过程，而不只看结果','公共议题','通过过程中的动作和信息建立理解。','呈现行动过程']],
+charity:[['助学故事，可以从学生的日常开始','助学教育','先呈现真实日常，再解释项目提供的支持。','从日常进入处境'],['一次陪伴，怎样呈现它的实际价值','社区关怀','用连续行动展示陪伴，不替人物下结论。','连续行动记录'],['普通人参与公益的第一步','公益参与','把抽象的支持转换为可理解的具体动作。','具体参与步骤'],['一笔支持，如何对应一项真实需要','助学教育','围绕一项经核实的需要组织叙事。','事实对应需要'],['让服务对象自己讲述改变','社区关怀','以本人真实表达呈现经历，保留原意。','人物自主讲述'],['项目进展也可以讲成一个故事','公益参与','选取一个具体进展，呈现前后过程。','进展故事化']],
+creators:[['人物的真实行动，比旁白更有力量','人物故事','观察人物主动做了什么，再补充必要背景。','行动建立人物'],['用一次同行，打开故事的入口','真实行动','让观众跟随人物经历一段真实过程。','同行视角'],['一段对话，怎样自然带出人物处境','人物故事','让问题来自现场，而不是照着介绍念。','现场对话'],['用普通的一天，讲述长期的坚持','日常记录','选择反复出现的小行动，呈现持续性。','日常细节累积'],['故事结尾，留给人物自己的声音','人物故事','以真实原话结束，不代替人物总结。','人物原声结尾'],['把镜头留给行动发生的过程','真实行动','在关键过程停留，减少抽象介绍。','过程镜头']],
+organizations:[['项目更新，先回答公众最关心的问题','项目记录','用一个具体问题串起进展与事实依据。','问题带出进展'],['一段采访，保留人物自己的表达','人物访谈','选择完整且有上下文的真实回答。','完整原话'],['让第一次接触的人知道如何参与','参与引导','先解释项目，再提供明确且真实的下一步。','清晰行动入口'],['从现场的一件事，解释项目的价值','项目记录','用一个真实场景连接项目目标与执行。','现场切入'],['同一个问题，记录不同阶段的回答','人物访谈','围绕同一问题呈现可核实的变化。','阶段对照'],['把反馈做成公众能看懂的内容','参与引导','保留事实依据，同时减少行业术语。','反馈具体化']]
+};
+const items = categories.flatMap((c,ci)=>seeds[c.id].map((v,i)=>({
+  id:`${c.id}-${i}`,category:c.id,title:v[0],tag:v[1],reason:v[2],pattern:v[3],
+  author:c.id==='creators'?`达人示例 ${String.fromCharCode(65+i%3)}`:c.id==='organizations'?`机构示例 ${String.fromCharCode(65+i%3)}`:`来源示例 ${i+1}`,
+  authorId:['creators','organizations'].includes(c.id)?`${c.id}-account-${i%3}`:null,
+  age:[1,2,4,6,9,12][i],duration:['00:58','01:26','00:46','02:10','01:05','00:52'][i],
+  likes:((6-i)*2370+ci*541), views:((6-i)*1.7+ci*.4).toFixed(1),
+  date:`11月${String(19-[1,2,4,6,9,12][i]).padStart(2,'0')}日`
+})));
+const materials=[
+  {id:'sample-story-a',name:'示例故事 A',note:'用于演示关联文章与人物故事；不是实际学生资料。'},
+  {id:'sample-interview-b',name:'示例采访 B',note:'用于演示采访片段的选择；未包含真实音视频。'},
+  {id:'sample-project-c',name:'示例项目资料 C',note:'用于演示项目说明的引用；正式事实待机构确认。'}
+];
+const $=s=>document.querySelector(s);
+const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let saved={};try{saved=JSON.parse(localStorage.getItem('renai-wireframe-v1')||'{}')}catch{}
+const state={category:'trends',page:'discovery',filter:'全部',account:'all',query:'',days:'30',sort:'recent',detail:null,detailExpanded:{},references:Array.isArray(saved.references)?saved.references.filter(r=>items.some(i=>i.id===r.id)):[],materials:Array.isArray(saved.materials)?saved.materials.filter(id=>materials.some(m=>m.id===id)):[],task:typeof saved.task==='string'?saved.task:''};
+state.creation=saved.creation&&typeof saved.creation==='object'?saved.creation:{snapshot:null,chosen:null,drafts:{}};
+state.creation.drafts=state.creation.drafts||{};
+let toastTimer;let syncLabel='示例内容 · 尚未接入数据源';
+function persist(){updateCreationNotice();try{localStorage.setItem('renai-wireframe-v1',JSON.stringify({references:state.references,materials:state.materials,task:state.task,creation:state.creation,library:typeof libraryStore==='undefined'?null:libraryStore,scope:typeof scopeStore==='undefined'?null:scopeStore}))}catch{}}
+function toast(text){$('#toast').textContent=text;$('#toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>{$('#toast').hidden=true},3400)}
+function currentCategory(){return categories.find(c=>c.id===state.category)}
+function selected(id){return state.references.some(r=>r.id===id)}
+function renderNav(){
+  $('#category-nav').innerHTML=categories.map(c=>`<button class="nav-item ${state.page==='discovery'&&state.category===c.id?'active':''}" data-category="${c.id}" ${state.page==='discovery'&&state.category===c.id?'aria-current="page"':''}><span class="nav-icon" aria-hidden="true">${c.icon}</span><span>${c.name}</span><span class="nav-count">${items.filter(i=>i.category===c.id).length}</span></button>`).join('');
+  document.querySelectorAll('[data-page]').forEach(b=>{b.classList.toggle('active',b.dataset.page===state.page);if(b.dataset.page===state.page)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+}
+function accountOptions(){
+  const accounts=new Map();
+  items.filter(i=>i.category===state.category&&i.authorId).forEach(i=>{if(!accounts.has(i.authorId))accounts.set(i.authorId,{id:i.authorId,name:i.author,count:0});accounts.get(i.authorId).count++});
+  return [...accounts.values()];
+}
+function accountControls(){
+  if(!['creators','organizations'].includes(state.category))return '';
+  const accounts=accountOptions();
+  return `<div class="account-filter" role="group" aria-label="按账号筛选"><div class="account-filter-heading"><span class="filter-label">关注账号</span><span class="account-filter-note">新视频混合展示 · ${accounts.length} 个关注账号</span></div><div class="account-options"><button class="account-pill ${state.account==='all'?'active':''}" data-account="all" aria-pressed="${state.account==='all'}">全部账号</button>${accounts.map(a=>`<button class="account-pill ${state.account===a.id?'active':''}" data-account="${a.id}" aria-pressed="${state.account===a.id}">${escapeHTML(a.name)}<span class="account-count">${a.count}</span></button>`).join('')}</div></div>`;
+}
+function heading(title,description,en,action=''){return `<div class="page-heading"><div><p class="eyebrow">${en}</p><h1>${title}</h1><p class="page-description">${description}</p></div>${action}</div>`}
+function renderDiscovery(){
+  const c=currentCategory();$('#breadcrumb').textContent=c.name;
+  $('#main-content').innerHTML=heading(c.name,c.description,c.en,`<button class="heading-action" data-action="sources">${['creators','organizations'].includes(c.id)?'管理关注账号':'管理观察范围'}</button>`)+`
+  <section class="controls" aria-label="内容筛选"><div class="search-line"><div class="search-box"><span class="search-symbol" aria-hidden="true">⌕</span><input id="search-input" type="search" aria-label="搜索本板块内容" placeholder="搜索话题、内容或作者" value="${escapeHTML(state.query)}"></div><select id="date-filter" aria-label="时间范围"><option value="30" ${state.days==='30'?'selected':''}>近30天</option><option value="7" ${state.days==='7'?'selected':''}>近7天</option><option value="3" ${state.days==='3'?'selected':''}>近3天</option></select><select id="sort-filter" aria-label="排序"><option value="recent" ${state.sort==='recent'?'selected':''}>最近更新</option><option value="likes" ${state.sort==='likes'?'selected':''}>互动表现</option></select></div><div class="filter-line"><span class="filter-label">内容方向</span>${c.filters.map(f=>`<button class="filter-pill ${state.filter===f?'active':''}" data-filter="${f}" aria-pressed="${state.filter===f}">${f}</button>`).join('')}</div>${accountControls()}</section>
+  <div class="section-toolbar"><span><strong>内容列表</strong> <span id="result-count"></span></span><button class="quiet small" data-action="refresh">刷新内容</button></div><p class="sync-state" id="sync-state">${syncLabel}</p><div id="cards" class="card-grid"></div><p class="load-message">本轮使用虚构示例观察布局；实际抓取范围与更新能力另行接入。</p>`;
+  renderCards();
+}
+function filteredItems(){let a=items.filter(i=>i.category===state.category&&(state.account==='all'||i.authorId===state.account)&&(state.filter==='全部'||i.tag===state.filter)&&i.age<=Number(state.days)&&`${i.title} ${i.author} ${i.tag}`.toLowerCase().includes(state.query.toLowerCase()));if(state.sort==='likes')a.sort((a,b)=>b.likes-a.likes);else a.sort((a,b)=>a.age-b.age);return a}
+function renderCards(){
+  if(state.page!=='discovery')return;
+  const list=filteredItems();$('#result-count').textContent=`· ${list.length} 条示例`;
+  $('#cards').innerHTML=list.length?list.map(i=>`<article class="content-card ${state.detail===i.id?'selected':''}"><button class="card-open" data-open="${i.id}" aria-label="查看 ${escapeHTML(i.title)}"><div class="video-placeholder"><span class="placeholder-label">视频占位</span><span class="play-mark" aria-hidden="true">▷</span><span class="video-duration">${i.duration}</span></div><div class="card-body"><div class="card-topline"><span class="tag">${i.tag}</span><span class="example-label">虚构示例</span></div><h2>${i.title}</h2><div class="card-author">${i.author} · ${i.date}</div><p class="card-reason"><span class="reason-label">参考价值</span>${i.reason}</p></div></button><div class="card-bottom"><span>示例点赞 ${i.likes.toLocaleString()}</span><button class="card-add ${selected(i.id)?'added':''}" data-add="${i.id}" aria-pressed="${selected(i.id)}">${selected(i.id)?'已加入':'加入参考'}</button></div></article>`).join(''):`<div class="empty-state" style="grid-column:1/-1"><h2>没有符合条件的示例</h2><p>试试其他账号、内容方向或时间范围。</p><button data-action="reset-filters">重置筛选</button></div>`;
+}
+function renderDetail(){
+  const panel=$('#detail-panel');const item=items.find(i=>i.id===state.detail);
+  panel.hidden=!item||state.page!=='discovery';if(panel.hidden){panel.innerHTML='';panel.dataset.item='';return}
+  const sameItem=panel.dataset.item===item.id;
+  const scrollPosition=sameItem?panel.scrollTop:0;
+  if(!sameItem)state.detailExpanded={};
+  const expanded=state.detailExpanded||{};
+  const adopted=state.references.some(r=>r.id===item.id&&r.pattern===item.pattern);
+  const selectedMaterials=state.materials.length;
+  panel.innerHTML=`<div class="detail-header"><span>视频与核心分析</span><button class="close-detail" data-action="close-detail" aria-label="关闭内容详情">×</button></div>
+  <div class="video-placeholder detail-video"><span class="placeholder-label">原视频占位</span><span class="play-mark" aria-hidden="true">▷</span><span class="video-duration">${item.duration}</span></div>
+  <h2 class="detail-title">${item.title}</h2><div class="detail-meta compact-meta">${item.author} · ${item.date} · 虚构示例</div>
+  <section class="core-analysis" aria-label="核心分析"><h3>为什么值得参考</h3><p>${item.reason}</p><div class="core-design"><span class="core-design-label">可借鉴的设计</span><strong>${item.pattern}</strong></div><button class="primary wide small" data-adopt="${item.id}">${adopted?'已采用这个设计':'采用这个设计'}</button></section>
+  <div class="match-overview"><strong>机构素材匹配</strong><span>待核实</span><p>已选 ${selectedMaterials} 项占位素材；真实匹配及使用要求待确认。</p></div>
+  <div class="detail-deeper"><p class="deeper-label">按需展开详细内容</p>
+  <details class="detail-expander" data-expansion="analysis" ${expanded.analysis?'open':''}><summary>完整创作拆解与证据</summary><div class="expander-body"><h3>开场与叙事</h3><p>${item.reason}</p><div class="evidence">证据位置占位：正式分析应回到实际片段或文本。当前未取得真实视频，不代表已完成内容分析。</div><h3>适用条件</h3><p>用机构自己的真实资料支持这种表达设计，确认人物是否愿意呈现相关经历，以及现有画面和采集时间能否满足。</p><h3>不能直接照搬</h3><p>不移植原作者的人物经历、原话或独特素材。具体事实以机构核实资料为准。</p></div></details>
+  <details class="detail-expander" data-expansion="materials" ${expanded.materials?'open':''}><summary>素材匹配与缺口</summary><div class="expander-body"><p class="detail-notice">以下仅演示选材交互，尚未执行真实检索或适用度评分。</p>${materials.slice(0,2).map(m=>`<div class="match-card"><h3>${escapeHTML(m.name)}</h3><p>${m.note}</p><button class="small" data-material="${m.id}">${state.materials.includes(m.id)?'移除素材':'选用此素材'}</button></div>`).join('')}<h3>需要确认什么</h3><p>故事是否有事实支撑、片段是否可用、是否需要补采，以及人物的呈现要求。</p><button class="wide small" data-action="select-materials">选择其他素材</button></div></details>
+  <details class="detail-expander" data-expansion="source" ${expanded.source?'open':''}><summary>来源与数据说明</summary><div class="expander-body"><p>作者：${item.author}<br>示例发布日期：${item.date}<br>示例点赞：${item.likes.toLocaleString()}</p><p>全部内容为虚构示例，没有实际原视频或抓取结果。正式版在此展示真实来源、统计时间和可获得的数据。</p></div></details>
+  </div><button class="wide detail-collect" data-add="${item.id}">${selected(item.id)?'整条参考已在任务中':'仅收藏整条参考'}</button>`;
+  panel.dataset.item=item.id;panel.scrollTop=scrollPosition;
+}
+function renderBoard(){
+  const refs=state.references.map(r=>({record:r,item:items.find(i=>i.id===r.id)})).filter(r=>r.item);
+  $('#reference-board').innerHTML=`<div class="board-heading"><h2>本次创作参考板</h2><span class="outline-badge">草稿</span></div><p class="board-caption">跨板块收集参考，选择素材，逐步确定这次怎么讲。</p><section class="board-group"><div class="group-heading"><h3>本次任务</h3><button class="text-button small" data-action="edit-task">${state.task?'编辑':'添加'}</button></div><p class="board-task ${state.task?'':'muted'}">${state.task?escapeHTML(state.task):'还没有设定创作任务'}</p><button class="text-button small" data-action="edit-task">用一句话描述今天要做什么</button></section><section class="board-group"><div class="group-heading"><h3>选定参考 · ${refs.length}</h3>${refs.length?'<button class="text-button small" data-action="clear-refs">清空</button>':''}</div>${refs.length?refs.map(({record:r,item:i})=>`<div class="board-item"><div class="board-item-header"><p class="board-item-title">${i.title}</p><button class="remove-item" data-remove="${i.id}" aria-label="移除参考 ${i.title}">×</button></div><p class="board-item-note">${r.pattern?`采用设计：${escapeHTML(r.pattern)}`:'已收藏参考，借鉴点待选择'}</p><button class="text-button small" data-open="${i.id}">查看分析</button></div>`).join(''):'<div class="board-empty">从内容列表选择参考<br>也可以只采用一个表达设计</div>'}</section><section class="board-group"><div class="group-heading"><h3>自有素材 · ${state.materials.length}</h3><button class="text-button small" data-action="select-materials">选择</button></div>${state.materials.length?state.materials.map(id=>{const m=materials.find(x=>x.id===id);return `<div class="board-item"><div class="board-item-header"><p class="board-item-title">${escapeHTML(m.name)}</p><button class="remove-item" data-remove-material="${id}" aria-label="移除${escapeHTML(m.name)}">×</button></div><p class="board-item-note">${m.id.startsWith('local-')?'本地演示资料':'占位素材，正式内容待导入'}</p></div>`}).join(''):'<div class="board-empty">按创作需要调用机构素材<br>也可后续补充新资料</div>'}</section><section class="board-group"><div class="group-heading"><h3>待确认</h3></div><p class="board-footnote">${!state.task?'补充本次任务<br>':''}${!refs.length?'选择参考或表达设计<br>':''}${!state.materials.length?'关联真实素材<br>':''}正式内容的事实与使用范围</p></section><button class="primary wide" data-page="creation">进入创作空间</button><p class="board-footnote">当前选择仅保存在此浏览器。<br>本轮先确认首页与参考板交互。</p>`;
+}
+const directionModels=[
+ {id:'detail',name:'从一个真实细节切入',angle:'先呈现能被看见的日常细节，再补足背景与项目支持。',need:'需要具体日常画面和经核实的故事细节。',open:'从一个已核实的日常行动进入，先让观众观察，再解释背景。',steps:['一个真实细节','人物处境与背景','项目具体支持','真实且清晰的参与方式']},
+ {id:'question',name:'用一个具体问题串联',angle:'围绕一个观众容易理解的问题，组织人物表达和事实依据。',need:'需要可公开的真实回答，避免代写人物引语。',open:'提出一个与主题有关的问题，随后使用人物的真实回答。',steps:['提出核心问题','真实回答与细节','用事实解释支持价值','回应问题并给出参与方式']},
+ {id:'process',name:'跟随一段真实行动',angle:'用一段行动的过程展开故事，让观众跟随人物理解发生了什么。',need:'需要过程画面；条件不足时补拍或调整讲法。',open:'从行动正在发生的现场进入，交代谁在做什么。',steps:['进入行动现场','跟随过程与选择','解释项目发挥的作用','保留人物声音和参与入口']}
+];
+function basisSignature(){return JSON.stringify({task:state.task,references:state.references,materials:state.materials.map(id=>({id,revision:materials.find(m=>m.id===id)?.revision||0}))})}
+function currentDirection(){return directionModels.find(d=>d.id===state.creation.chosen)}
+function currentDraftKey(){return state.creation.snapshot?JSON.stringify([state.creation.snapshot.signature,state.creation.chosen]):''}
+function currentDraft(){return state.creation.drafts[currentDraftKey()]}
+function creationIsStale(){return !!state.creation.snapshot&&state.creation.snapshot.signature!==basisSignature()}
+function updateCreationNotice(){
+ const notice=$('#creation-stale');if(notice){notice.hidden=!creationIsStale();notice.textContent='任务、参考或素材已变化。当前方向和草稿仍保留旧依据，请重新查看示例方向后再导出。'}
+ const basis=$('#creation-basis-region');if(basis){const wasOpen=basis.querySelector('details')?.open;basis.innerHTML=creationBasis();if(wasOpen)basis.querySelector('details').open=true}
+ const count=$('#creation-basis-info');if(count)count.textContent=`已选参考 ${state.references.length} 条 · 素材 ${state.materials.length} 项`;
+ const exp=$('[data-action="export-draft"]');if(exp)exp.disabled=creationIsStale();
+}
+function creationBasis(){
+ const refs=state.references.map(r=>{const i=items.find(x=>x.id===r.id);return `<li>${escapeHTML(i.title)}<span>${r.pattern?'借鉴：'+escapeHTML(r.pattern):'借鉴点待确认'}</span></li>`}).join('');
+ const mats=state.materials.map(id=>`<li>${escapeHTML(materials.find(m=>m.id===id).name)}<span>交互占位资料，事实与使用范围待确认</span></li>`).join('');
+ return `<details class="creation-basis"><summary>查看本次参考与素材</summary><div class="basis-columns"><div><h3>外部参考</h3>${refs?`<ul>${refs}</ul>`:'<p>还未选择参考，可以返回发现页补充。</p>'}</div><div><h3>机构素材</h3>${mats?`<ul>${mats}</ul>`:'<p>还未选择素材，当前仅能查看待补材料的示例结构。</p>'}</div></div></details>`;
+}
+function renderCreation(){
+ $('#breadcrumb').textContent='创作空间';
+ const snapshot=state.creation.snapshot;const direction=currentDirection();const draft=currentDraft();
+ $('#main-content').innerHTML=heading('创作空间','先比较创作方向，选定后展开方案与分镜脚本。','WORKSPACE / CREATION')+
+ `<ol class="creation-steps"><li class="${!snapshot?'current':'complete'}">确认任务与依据</li><li class="${snapshot&&!direction?'current':''}">比较创作方向</li><li class="${direction?'current':''}">方案与脚本</li></ol>
+ <details class="creation-task-fold" ${snapshot?'':'open'}><summary>${snapshot?'任务与依据 · '+escapeHTML(state.task):'确认本次创作任务'}</summary><section class="wire-panel creation-brief"><h2>本次创作任务</h2><label for="creation-task" class="page-description">今天要做什么内容？</label><textarea id="creation-task" placeholder="例如：今天需要做一条有关助学主题的视频">${escapeHTML(state.task)}</textarea><div class="creation-brief-bottom"><span id="creation-basis-info">已选参考 ${state.references.length} 条 · 素材 ${state.materials.length} 项</span><button class="primary" data-action="show-directions">${snapshot?'重新查看示例方向':'查看示例创作方向'}</button></div><div id="creation-basis-region">${creationBasis()}</div><p class="creation-prototype-note">线框演示：下方方向为预设结构示例，未调用AI，不代表真实内容分析或可发布成稿。</p></section></details>
+ <p id="creation-stale" class="creation-stale" ${creationIsStale()?'':'hidden'}></p>
+ ${!snapshot?`<div class="creation-placeholder"><h2>先确定这次怎么讲</h2><p>输入任务后，结合右侧已选参考和素材，比较三种示例讲法。</p><div class="draft-flow"><span>比较讲法</span><span>选定一个方向</span><span>展开方案和脚本</span></div></div>`:direction&&draft?renderScriptEditor(direction,draft):renderDirections()}`;
+ updateCreationNotice();
+}
+function renderDirections(){
+ const b=state.creation.snapshot;
+ return `<section class="directions-section"><div class="creation-section-heading"><div><h2>比较三种创作方向</h2><p>任务：${escapeHTML(b.task)}</p></div><span class="outline-badge">预设交互示例</span></div><div class="direction-grid">${directionModels.map(d=>`<article class="direction-card"><h3>${d.name}</h3><p class="direction-angle">${d.angle}</p><h4>叙事顺序</h4><ol>${d.steps.map(x=>`<li>${x}</li>`).join('')}</ol><h4>本次参考与素材</h4><p>${b.referenceNames.length?escapeHTML(b.referenceNames.join('、')):'参考尚未选择'}<br>${b.materialNames.length?'可供核实：'+escapeHTML(b.materialNames.join('、')):'素材尚未选择'}</p><h4>执行条件</h4><p>${d.need}</p><p class="direction-gap">当前材料均为占位，匹配性和事实仍需核实。</p><button class="primary wide" data-direction="${d.id}">选这个方向</button></article>`).join('')}</div></section>`;
+}
+function makeDraft(d){
+ const b=state.creation.snapshot;const source=b.materialNames.length?b.materialNames.join('、')+'（占位，待核实）':'待补充真实机构素材';
+ return {title:`${b.task}｜${d.name}`,summary:`围绕任务“${b.task}”，${d.angle}希望公众理解什么及具体参与目标仍需确认。`,opening:d.open,structure:d.steps.join(' → '),reference:b.referenceNames.length?b.referenceNames.join('；'):'尚未选择外部参考',patterns:b.patterns.length?b.patterns.join('；'):'借鉴点待确认',savedAt:'',shots:d.steps.map((x,i)=>({time:['0—5秒','5—20秒','20—40秒','40—60秒'][i],visual:`[待补或核实] ${x}所需的真实画面。`,audio:i===0?d.open:'[待核实] 依据机构资料整理旁白；人物原话需来自真实采访，不代写引语。',source,notes:i===3?'参与入口及发布条件待确认。':'事实、人物意愿和使用范围待确认。'}))};
+}
+function renderScriptEditor(d,draft){
+ return `<section class="script-editor"><div class="creation-section-heading"><div><h2>方案与脚本草稿</h2><p>已选方向：${d.name} · 所有时间和镜头均为结构示例</p></div><button class="small" data-action="back-directions">返回比较方向</button></div><section class="wire-panel"><h3>视频方案</h3>${[['title','方案标题'],['summary','创作思路'],['opening','开场设计'],['structure','叙事顺序']].map(([key,label])=>`<label class="draft-label" for="draft-${key}">${label}</label><textarea id="draft-${key}" class="draft-field" data-draft-field="${key}">${escapeHTML(draft[key])}</textarea>`).join('')}<details class="creation-basis"><summary>本次采用的参考与事实依据</summary><p>参考：${escapeHTML(draft.reference)}</p><p>借鉴点：${escapeHTML(draft.patterns)}</p><p>素材：${escapeHTML(state.creation.snapshot.materialNames.join('、')||'待补充')}。外部视频不作为机构人物事实的来源。</p></details></section><section class="wire-panel"><h3>分镜脚本</h3><p class="creation-prototype-note">可直接编辑各镜头。方括号内容是待补信息，不是对真实人物的陈述。</p><div class="script-table-scroll"><table class="script-table"><thead><tr><th>镜头与时长</th><th>画面</th><th>旁白与采访</th><th>素材与执行</th></tr></thead><tbody>${draft.shots.map((shot,index)=>`<tr><td><strong>镜头 ${index+1}</strong><label class="sr-only" for="shot-${index}-time">镜头${index+1}时长</label><input id="shot-${index}-time" data-shot="${index}" data-shot-field="time" value="${escapeHTML(shot.time)}"></td>${['visual','audio'].map((key,k)=>`<td><label class="sr-only" for="shot-${index}-${key}">镜头${index+1}${k?'旁白与采访':'画面'}</label><textarea id="shot-${index}-${key}" data-shot="${index}" data-shot-field="${key}">${escapeHTML(shot[key])}</textarea></td>`).join('')}<td><label class="sr-only" for="shot-${index}-source">镜头${index+1}素材依据</label><textarea id="shot-${index}-source" data-shot="${index}" data-shot-field="source">${escapeHTML(shot.source)}</textarea><label class="sr-only" for="shot-${index}-notes">镜头${index+1}执行要求</label><textarea id="shot-${index}-notes" data-shot="${index}" data-shot-field="notes">${escapeHTML(shot.notes)}</textarea></td></tr>`).join('')}</tbody></table></div></section><div class="draft-footer"><p id="draft-save-status">${draft.savedAt?'最近保存 '+escapeHTML(draft.savedAt):'编辑内容自动保存在此浏览器'}</p><div><button data-action="save-draft">保存草稿</button><button class="primary" data-action="export-draft" ${creationIsStale()?'disabled':''}>导出草稿</button></div></div></section>`;
+}
+function showDirections(){
+ if(!state.task.trim()){toast('先用一句话写下本次任务');$('#creation-task')?.focus();return}
+ state.creation.snapshot={signature:basisSignature(),task:state.task,referenceNames:state.references.map(r=>items.find(i=>i.id===r.id).title),patterns:state.references.map(r=>r.pattern).filter(Boolean),materialNames:state.materials.map(id=>materials.find(m=>m.id===id).name)};
+ state.creation.chosen=null;persist();renderCreation();toast('已展示三种示例方向，尚未调用AI');
+}
+function selectDirection(id){const d=directionModels.find(x=>x.id===id);if(!d)return;if(creationIsStale()){toast('依据已变化，请先重新查看方向');return}state.creation.chosen=id;const key=currentDraftKey();if(!state.creation.drafts[key])state.creation.drafts[key]=makeDraft(d);persist();renderCreation()}
+function exportDraft(){
+ if(creationIsStale()){toast('请先依据最新任务和素材重新查看方向');return}
+ const d=currentDraft();if(!d)return;
+ const lines=['# '+d.title,'','交互示例草稿，未调用AI，不可直接作为真实发布内容。','','## 创作思路',d.summary,'','## 开场',d.opening,'','## 叙事顺序',d.structure,'','## 参考',d.reference,'借鉴点：'+d.patterns];
+ d.shots.forEach((shot,i)=>lines.push('','## 镜头 '+(i+1)+' '+shot.time,'画面：'+shot.visual,'声音：'+shot.audio,'素材：'+shot.source,'执行：'+shot.notes));
+ const url=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/markdown;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download='renai-script-draft.md';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('已导出带示例标记的草稿');
+}
+function renderMaterials(){
+  $('#breadcrumb').textContent='自有素材库';
+  $('#main-content').innerHTML=heading('自有素材库','为创作提供真实故事、画面与事实依据。库的具体管理流程后续设计。','LIBRARY / SUPPORT')+`<div class="wire-panel"><h2>素材组织结构占位</h2><div class="draft-flow"><span>项目</span><span>故事</span><span>文件与片段</span><span>使用要求</span></div><p>本轮仅演示从右侧参考板选择素材，不上传或处理真实学生资料。</p></div>${materials.map(m=>`<section class="wire-panel"><h2>${escapeHTML(m.name)}</h2><p>${m.note}</p><button class="small" data-material="${m.id}">${state.materials.includes(m.id)?'从任务移除':'选入本次任务'}</button></section>`).join('')}`;
+}
+function render(){renderNav();if(state.page==='discovery')renderDiscovery();else if(state.page==='creation')renderCreation();else renderMaterials();renderDetail();renderBoard()}
+function showDialog(body){$('#dialog-content').innerHTML=body;$('#dialog').showModal();$('#dialog').scrollTop=0}
+function editTask(){showDialog(`<h2>本次创作任务</h2><p>任务和参考会一直保留在右侧。本轮先确认它们怎样组织。</p><label for="task-input">用一句话描述任务</label><textarea id="task-input" placeholder="今天我需要做一个有关……的视频">${escapeHTML(state.task)}</textarea><div class="dialog-actions"><button data-action="close-dialog">取消</button><button class="primary" data-action="save-task">保存任务</button></div>`);$('#task-input').focus()}
+function selectMaterials(){showDialog(`<h2>选择本次素材</h2><p>当前仅有交互占位资料，全部为虚构示例；真实素材导入后按相同位置选择。</p>${materials.map(m=>`<button class="material-option" data-material="${m.id}">${state.materials.includes(m.id)?'☑':'□'} ${escapeHTML(m.name)}<span>${m.note}</span></button>`).join('')}<div class="dialog-actions"><button class="primary" data-action="close-dialog">完成选择</button></div>`)}
+function toggleReference(id,pattern){
+  const i=items.find(x=>x.id===id);if(!i)return;
+  const r=state.references.find(x=>x.id===id);
+  if(r&&pattern){r.pattern=pattern;toast('已记录本次采用的表达设计')}
+  else if(r){toast('这条内容已在右侧参考板中');return}
+  else{state.references.push({id,pattern:pattern||''});toast(pattern?'已将表达设计加入本次任务':'已加入右侧参考板')}
+  persist();renderBoard();renderCards();renderDetail();
+}
+function setPage(page){state.page=page;state.detail=null;render();window.scrollTo({top:0,behavior:'instant'})}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.category){state.category=b.dataset.category;state.page='discovery';state.filter='全部';state.account='all';state.query='';state.detail=null;render();return}
+  if(b.dataset.page){setPage(b.dataset.page);return}
+  if(b.dataset.account){state.account=b.dataset.account;state.detail=null;renderDiscovery();renderDetail();return}
+  if(b.dataset.filter){state.filter=b.dataset.filter;renderDiscovery();return}
+  if(b.dataset.open){const item=items.find(i=>i.id===b.dataset.open);if(!item)return;state.page='discovery';if(state.category!==item.category){state.category=item.category;state.query='';state.filter='全部';state.account='all';state.days='30'}if(state.account!=='all'&&state.account!==item.authorId)state.account='all';state.detail=item.id;renderNav();renderDiscovery();renderDetail();return}
+  if(b.dataset.add){toggleReference(b.dataset.add);return}
+  if(b.dataset.adopt){const i=items.find(x=>x.id===b.dataset.adopt);toggleReference(i.id,i.pattern);return}
+  if(b.dataset.remove){state.references=state.references.filter(r=>r.id!==b.dataset.remove);persist();renderBoard();renderCards();renderDetail();return}
+  if(b.dataset.removeMaterial){state.materials=state.materials.filter(id=>id!==b.dataset.removeMaterial);persist();render();return}
+  if(b.dataset.material){const id=b.dataset.material;if(typeof materialCanUse==='function'&&!materialCanUse(id)&&!state.materials.includes(id)){toast('先确认资料内容和使用范围');return}state.materials=state.materials.includes(id)?state.materials.filter(x=>x!==id):[...state.materials,id];persist();renderBoard();renderDetail();if(state.page==='materials')renderMaterials();if($('#dialog').open)selectMaterialsRefresh();return}
+  if(b.dataset.direction){selectDirection(b.dataset.direction);return}
+  const action=b.dataset.action;
+  if(action==='close-detail'){state.detail=null;renderDetail();renderCards()}
+  if(action==='edit-task')editTask();
+  if(action==='close-dialog')$('#dialog').close();
+  if(action==='save-task'){state.task=$('#task-input').value.trim();persist();$('#dialog').close();renderBoard();if(state.page==='creation')renderCreation();toast('任务已保存')}
+  if(action==='show-directions')showDirections();
+  if(action==='back-directions'){state.creation.chosen=null;persist();renderCreation()}
+  if(action==='save-draft'){const draft=currentDraft();if(draft){draft.savedAt=new Date().toLocaleTimeString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false,hour:'2-digit',minute:'2-digit'});persist();$('#draft-save-status').textContent='最近保存 '+draft.savedAt;toast('草稿已保存')}}
+  if(action==='export-draft')exportDraft();
+  if(action==='select-materials')selectMaterials();
+  if(action==='clear-refs'){state.references=[];persist();renderBoard();renderCards();renderDetail()}
+  if(action==='reset-filters'){state.query='';state.filter='全部';state.account='all';state.days='30';renderDiscovery()}
+  if(action==='back-discovery')setPage('discovery');
+  if(action==='refresh'){syncLabel='刷新交互已演示 · 示例数据未连接外部来源';$('#sync-state').textContent=syncLabel;toast('这里只演示刷新反馈；没有执行真实抓取')}
+  if(action==='sources')showSources();
+});
+function showSources(){
+  const accounts=accountOptions();
+  if(accounts.length){showDialog(`<h2>关注的${state.category==='creators'?'公益达人':'公益机构'}</h2><p>这些账号的作品在主内容区混合展示，可使用账号筛选查看单个账号。此处为虚构示例名单，真实账号接入后再维护。</p><div class="account-directory">${accounts.map(a=>`<div class="account-directory-row"><strong>${escapeHTML(a.name)}</strong><span>${a.count} 条示例作品</span></div>`).join('')}</div><p>新增、移除账号及更新状态的管理流程将在后续设计。</p><div class="dialog-actions"><button data-action="close-dialog">返回内容流</button></div>`);return}
+  showDialog(`<h2>管理观察范围</h2><p>此处将用于维护当前板块的数据来源、关键词或账号名单。</p><div class="wire-panel"><strong>${currentCategory().name}</strong><p>来源、覆盖范围、更新周期与权限状态将分别展示。本轮先确定入口位置，管理流程后续完善。</p></div><div class="dialog-actions"><button data-action="close-dialog">返回首页</button></div>`);
+}
+function selectMaterialsRefresh(){const content=$('#dialog-content');content.querySelectorAll('[data-material]').forEach(b=>{const m=materials.find(x=>x.id===b.dataset.material);b.innerHTML=`${state.materials.includes(m.id)?'☑':'□'} ${escapeHTML(m.name)}<span>${m.note}</span>`})}
+document.addEventListener('toggle',e=>{if(e.target.matches?.('details[data-expansion]')){state.detailExpanded=state.detailExpanded||{};state.detailExpanded[e.target.dataset.expansion]=e.target.open}},true);
+document.addEventListener('input',e=>{
+ if(e.target.id==='search-input'){state.query=e.target.value;renderCards()}
+ if(e.target.id==='creation-task'){state.task=e.target.value;persist();renderBoard()}
+ if(e.target.dataset.draftField){const d=currentDraft();if(d){d[e.target.dataset.draftField]=e.target.value;persist()}}
+ if(e.target.dataset.shot!==undefined){const d=currentDraft();if(d&&d.shots[Number(e.target.dataset.shot)]){d.shots[Number(e.target.dataset.shot)][e.target.dataset.shotField]=e.target.value;persist()}}
+});
+document.addEventListener('change',e=>{if(e.target.id==='date-filter'){state.days=e.target.value;renderCards()}if(e.target.id==='sort-filter'){state.sort=e.target.value;renderCards()}});
+$('#prototype-info').addEventListener('click',()=>showDialog(`<h2>这一轮确认什么</h2><p>已按你的选择搭建：侧边切换四类内容、单个主内容区、右侧展开详情，以及常驻创作参考板。</p><ul class="plain-list"><li>可以切换分类、搜索、筛选和排序。</li><li>可以查看同屏分析、展开详细内容、加入或移除参考。</li><li>可以选择占位素材、比较示例方向、编辑和导出方案脚本草稿。</li></ul><p>全部卡片为虚构示例；未接入抖音、模型或真实机构素材。创作流程使用预设交互示例；素材库按故事聚合，并支持本地导入确认。</p><div class="dialog-actions"><button class="primary" data-action="close-dialog">开始查看</button></div>`));
+$('#dialog').addEventListener('click',e=>{if(e.target===$('#dialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close()}});
+render();
+
+'use strict';
+// Browser-local wireframe data. File binaries are never uploaded or persisted.
+var libraryStore={overrides:saved.library?.overrides||{},stories:Array.isArray(saved.library?.stories)?saved.library.stories:[],assets:Array.isArray(saved.library?.assets)?saved.library.assets:[]};
+const libraryDefaultStories=[
+ {id:'story-demo-a',title:'助学故事示例 A',summary:'同一个案例的文字与采访聚合示意，不含真实学生资料。',demo:true},
+ {id:'story-demo-project',title:'项目资料示例',summary:'项目说明、进展等通用资料的聚合示意。',demo:true},
+ {id:'story-inbox',title:'待归类资料',summary:'先保存资料，再确认所属故事、标签和使用范围。',inbox:true}
+];
+const libraryStories=[...libraryDefaultStories,...libraryStore.stories.filter(s=>s&&typeof s.id==='string'&&typeof s.title==='string')];
+materials.forEach((m,index)=>Object.assign(m,{storyId:index<2?'story-demo-a':'story-demo-project',kind:index===1?'视频':'文字',tags:index<2?['助学','案例示例']:['项目说明'],usage:'public',factChecked:true,text:'示例资料占位，不含实际学生经历或可引用原话。',demo:true,revision:0}));
+materials.forEach(m=>{if(libraryStore.overrides[m.id])Object.assign(m,libraryStore.overrides[m.id],{id:m.id})});
+libraryStore.assets.filter(a=>a&&typeof a.id==='string'&&typeof a.name==='string'&&!materials.some(m=>m.id===a.id)).forEach(a=>materials.push(a));
+const libraryView={query:'',status:'all',story:null};
+let libraryImport={files:[],text:'',mode:'new',assetId:null};
+function materialCanUse(id){const m=materials.find(a=>a.id===id);return !!m&&m.usage==='public'&&m.factChecked===true&&m.storyId!=='story-inbox'}
+state.materials=Array.isArray(saved.materials)?saved.materials.filter(id=>materialCanUse(id)):[];
+function libraryPending(m){return m.usage==='pending'||!m.factChecked||m.storyId==='story-inbox'}
+function libraryStatus(m){return materialCanUse(m.id)?(m.demo?'示例可用':'已确认可用'):m.usage==='internal'?'仅内部参考':'待确认'}
+function storyAssets(id){return materials.filter(m=>m.storyId===id)}
+function libraryTagList(tags){return (Array.isArray(tags)?tags:[]).map(t=>`<span class="tag">${escapeHTML(t)}</span>`).join('')}
+function librarySummary(){return `<div class="library-summary"><span>故事／资料组 <strong>${libraryStories.filter(s=>storyAssets(s.id).length).length}</strong></span><span>资料 <strong>${materials.length}</strong></span><span>可用 <strong>${materials.filter(m=>materialCanUse(m.id)).length}</strong></span><span>待确认 <strong>${materials.filter(libraryPending).length}</strong></span></div>`}
+function renderMaterials(){
+ $('#breadcrumb').textContent='自有素材库';
+ if(libraryView.story){renderStoryDetail(libraryView.story);return}
+ $('#main-content').innerHTML=heading('自有素材库','按故事聚合已有资料，围绕创作缺口补充新素材。','LIBRARY / STORIES',`<button class="primary heading-action" data-library-action="import">新增素材</button>`)+librarySummary()+`
+ <section class="controls"><label class="sr-only" for="library-search">搜索故事、素材或标签</label><input id="library-search" class="library-search" type="search" placeholder="搜索故事、素材或标签" value="${escapeHTML(libraryView.query)}"><div class="filter-line" aria-label="素材状态筛选">${[['all','全部'],['ready','有可用素材'],['pending','有待确认资料'],['internal','仅内部参考']].map(([id,label])=>`<button class="filter-pill ${libraryView.status===id?'active':''}" data-library-status="${id}" aria-pressed="${libraryView.status===id}">${label}</button>`).join('')}</div></section>
+ <div id="library-story-list" class="library-story-grid"></div><p class="library-note">当前示例用于讨论流程。新增资料仅保存在此浏览器，不上传、不执行真实AI整理或音视频转写。</p>`;
+ renderStoryCards();
+}
+function renderStoryCards(){
+ const list=libraryStories.filter(story=>{const assets=storyAssets(story.id);if(!assets.length)return false;const matchesStatus=libraryView.status==='all'||assets.some(m=>libraryView.status==='ready'?materialCanUse(m.id):libraryView.status==='internal'?m.usage==='internal':libraryPending(m));const text=[story.title,story.summary,...assets.map(m=>m.name+' '+(m.tags||[]).join(' '))].join(' ');return matchesStatus&&text.toLowerCase().includes(libraryView.query.toLowerCase())});
+ $('#library-story-list').innerHTML=list.length?list.map(story=>{const assets=storyAssets(story.id),ready=assets.filter(m=>materialCanUse(m.id)).length;const types=[...new Set(assets.map(m=>m.kind))];return `<article class="library-story-card"><div class="story-card-top"><span class="story-symbol" aria-hidden="true">▧</span><span class="tag">${story.inbox?'待归类':story.demo?'案例示例':'本地演示案例'}</span></div><h2>${escapeHTML(story.title)}</h2><p>${escapeHTML(story.summary||'按故事归集的创作资料。')}</p><div class="story-file-types">${types.map(t=>`<span>${escapeHTML(t)} ${assets.filter(m=>m.kind===t).length}</span>`).join('')}</div><div class="story-card-foot"><span>${assets.length} 份资料 · ${ready} 份可用</span><button class="small" data-library-story="${story.id}">查看故事资料</button></div></article>`}).join(''):`<div class="empty-state"><h2>没有符合条件的故事</h2><p>试试其他关键词或状态，也可以新增素材。</p><button data-library-action="reset-search">重置筛选</button></div>`;
+}
+function renderStoryDetail(id){
+ const story=libraryStories.find(s=>s.id===id);if(!story){libraryView.story=null;renderMaterials();return}
+ const assets=storyAssets(id);$('#breadcrumb').textContent='素材库 / '+story.title;
+ $('#main-content').innerHTML=`<button class="text-button library-back" data-library-action="back">返回故事列表</button>`+heading(escapeHTML(story.title),escapeHTML(story.summary||'同一案例的内容与资料。'),'LIBRARY / STORY',`<button class="heading-action" data-library-action="import">为此案例补充资料</button>`)+`
+ <div class="summary-row"><span class="count-chip">共 ${assets.length} 份资料</span><span class="count-chip">可用 ${assets.filter(m=>materialCanUse(m.id)).length} 份</span><span class="count-chip">待确认 ${assets.filter(libraryPending).length} 份</span></div>
+ <div class="library-assets">${assets.map(m=>`<article class="library-asset-row"><div class="asset-kind">${escapeHTML(m.kind)}</div><div class="asset-information"><h2>${escapeHTML(m.name)}</h2><p>${escapeHTML(m.note||m.sourceName||'本地演示资料')}</p><div class="asset-tags">${libraryTagList(m.tags)}</div><span class="asset-status">${libraryStatus(m)}</span></div><div class="asset-actions"><button class="small" data-library-preview="${m.id}">查看资料</button><button class="small" data-library-review="${m.id}">${materialCanUse(m.id)?'修改使用信息':'确认归属与使用'}</button><button class="small" data-material="${m.id}" ${!materialCanUse(m.id)&&!state.materials.includes(m.id)?'disabled':''}>${state.materials.includes(m.id)?'从任务移除':'选入本次任务'}</button></div></article>`).join('')}</div><p class="library-note">待确认或仅内部参考的资料可留在库内整理，尚不进入公开创作的选材列表。</p>`;
+}
+function libraryFileKind(name,type=''){const s=(name+' '+type).toLowerCase();if(/\.(png|jpg|jpeg|gif|webp)|image\//.test(s))return '图片';if(/\.(mp4|mov|webm)|video\//.test(s))return '视频';if(/\.(mp3|wav|m4a)|audio\//.test(s))return '音频';return '文字'}
+function openLibraryImport(){
+ libraryImport={files:[],text:'',mode:'new',assetId:null};
+ showDialog(`<h2>新增素材</h2><p>先放入内容，再确认所属故事、标签和使用范围。原型只记录文件信息和粘贴文本，不上传文件、不做真实内容识别。请使用演示材料。</p><label class="library-upload-zone" for="library-files"><strong>选择文件</strong><span>文章、图片、视频、音频均可演示；文件只记录名称和类型。</span><input id="library-files" type="file" multiple accept=".txt,.md,.pdf,.docx,.png,.jpg,.jpeg,.webp,.mp4,.mov,.webm,.mp3,.wav,.m4a"></label><div id="library-file-list" class="library-file-list"></div><label for="library-paste">也可以直接粘贴内容</label><textarea id="library-paste" maxlength="20000" placeholder="粘贴一段演示文字、已有文章或采访记录"></textarea><div class="dialog-actions"><button data-action="close-dialog">取消</button><button data-library-action="save-pending">先存为待确认</button><button class="primary" data-library-action="prepare">整理并确认信息</button></div>`);
+}
+function captureImport(){libraryImport.text=$('#library-paste')?.value.trim()||libraryImport.text;return libraryImport.files.length>0||!!libraryImport.text}
+function prepareLibraryReview(assetId){
+ let asset=assetId?materials.find(m=>m.id===assetId):null;
+ if(!asset&&!captureImport()){toast('先选择文件或粘贴一段内容');return}
+ if(asset)libraryImport={files:asset.sourceName?[{name:asset.sourceName,type:'',kind:asset.kind}]:[],text:asset.text||'',mode:'edit',assetId:asset.id};
+ const suggestedTitle=asset?.name||libraryImport.text.split('\n').find(x=>x.trim())?.slice(0,45)||libraryImport.files[0]?.name.replace(/\.[^.]+$/,'')||'新增资料';
+ const proposedStory=asset?.storyId||libraryView.story||'new';
+ showDialog(`<h2>确认资料信息</h2><p>以下为基于输入格式的演示建议，未调用AI。请核对归属、标签和使用范围；多文件按同一组信息暂存，可入库后逐份修改。</p><label for="library-title">资料名称${libraryImport.files.length>1?'前缀':''}</label><input id="library-title" maxlength="100" value="${escapeHTML(suggestedTitle)}"><label for="library-story-select">所属故事／案例</label><select id="library-story-select">${libraryStories.filter(s=>!s.inbox).map(story=>`<option value="${story.id}" ${proposedStory===story.id?'selected':''}>${escapeHTML(story.title)}</option>`).join('')}<option value="new" ${proposedStory==='new'?'selected':''}>建立新故事／案例</option><option value="story-inbox" ${proposedStory==='story-inbox'?'selected':''}>稍后归类</option></select><div id="library-new-story-wrap" ${proposedStory==='new'?'':'hidden'}><label for="library-new-story">新故事名称</label><input id="library-new-story" maxlength="100" placeholder="为案例起一个便于检索的内部名称"></div><label for="library-tags">标签，用逗号分隔</label><input id="library-tags" maxlength="200" placeholder="例如：助学、人物采访" value="${escapeHTML((asset?.tags||(/助学/.test(libraryImport.text)?['助学']:[])).join('，'))}"><label for="library-usage">使用范围</label><select id="library-usage"><option value="pending" ${!asset||asset.usage==='pending'?'selected':''}>待确认，先留在库内整理</option><option value="internal" ${asset?.usage==='internal'?'selected':''}>仅内部参考，不用于公开成稿</option><option value="public" ${asset?.usage==='public'?'selected':''}>已确认可用于公开创作，按授权范围处理隐私</option></select><label class="library-check"><input type="checkbox" id="library-fact" ${asset?.factChecked?'checked':''}>我确认资料内容及使用要求已核实（原型操作）</label><p class="library-note">保存资料不要求立刻完成确认。待归类、使用范围未知或事实未确认的资料，会保留为待确认状态。</p><div class="dialog-actions"><button data-action="close-dialog">取消</button><button class="primary" data-library-action="save-reviewed">保存到素材库</button></div>`);
+}
+function createLocalAsset(data){return {id:'local-material-'+crypto.randomUUID(),name:data.name,storyId:data.storyId,kind:data.kind||'文字',tags:data.tags||[],usage:data.usage||'pending',factChecked:!!data.factChecked,text:data.text||'',sourceName:data.sourceName||'',note:data.note||'浏览器内演示资料，未上传或自动分析。',revision:1}}
+function addLibraryAssets(common){
+ const assets=[];
+ libraryImport.files.forEach((file,index)=>assets.push(createLocalAsset({...common,name:libraryImport.files.length>1?common.name+' · '+file.name:common.name,kind:file.kind||libraryFileKind(file.name,file.type),sourceName:file.name})));
+ if(libraryImport.text)assets.push(createLocalAsset({...common,name:libraryImport.files.length?common.name+' · 粘贴内容':common.name,kind:'文字',text:libraryImport.text}));
+ assets.forEach(a=>{materials.push(a);libraryStore.assets.push(a)});return assets;
+}
+function savePendingLibrary(){
+ if(!captureImport()){toast('先选择文件或粘贴内容');return}
+ const id=libraryView.story||'story-inbox';addLibraryAssets({name:libraryImport.text.split('\n')[0].slice(0,35)||libraryImport.files[0]?.name||'待确认资料',storyId:id,usage:'pending',factChecked:false});persist();$('#dialog').close();libraryView.story=id;renderMaterials();renderBoard();toast('资料已暂存，归属与使用要求可稍后确认');
+}
+function saveReviewedLibrary(){
+ const name=$('#library-title').value.trim();if(!name){toast('请填写资料名称');return}
+ let storyId=$('#library-story-select').value;
+ if(storyId==='new'){const title=$('#library-new-story').value.trim();if(!title){toast('请填写新故事名称');return}const story={id:'local-story-'+crypto.randomUUID(),title,summary:'本地演示案例，内容与使用条件由人工确认。'};libraryStories.push(story);libraryStore.stories.push(story);storyId=story.id}
+ const data={name,storyId,tags:$('#library-tags').value.split(/[,，、]/).map(x=>x.trim()).filter(Boolean),usage:$('#library-usage').value,factChecked:$('#library-fact').checked};
+ if(libraryImport.mode==='edit'){const asset=materials.find(m=>m.id===libraryImport.assetId);Object.assign(asset,data,{revision:(asset.revision||0)+1});if(asset.demo)libraryStore.overrides[asset.id]={...asset};if(!materialCanUse(asset.id))state.materials=state.materials.filter(id=>id!==asset.id)}
+ else addLibraryAssets(data);
+ persist();$('#dialog').close();libraryView.story=storyId;renderMaterials();renderBoard();toast('已保存，可用状态按确认信息更新');
+}
+function previewLibraryAsset(id){
+ const m=materials.find(x=>x.id===id);if(!m)return;
+ showDialog(`<h2>${escapeHTML(m.name)}</h2><p>${escapeHTML(m.kind)} · ${libraryStatus(m)} · ${escapeHTML(libraryStories.find(s=>s.id===m.storyId)?.title||'待归类')}</p>${m.text?`<pre class="library-text-preview">${escapeHTML(m.text)}</pre>`:`<div class="library-media-preview">${escapeHTML(m.kind)}预览占位</div><p>原型未保存文件二进制或执行解析，仅记录文件信息：${escapeHTML(m.sourceName||'示例文件')}。</p>`}<div class="asset-tags">${libraryTagList(m.tags)}</div><div class="dialog-actions"><button data-action="close-dialog">关闭</button></div>`);
+}
+// This selector is shared by the reference board and the content-detail area.
+function selectMaterials(){
+ showDialog(`<h2>选择本次素材</h2><p>按故事归类，仅显示已确认可用于创作的演示资料。待确认资料请先到素材库完善使用信息。</p>${libraryStories.filter(story=>storyAssets(story.id).some(m=>materialCanUse(m.id))).map(story=>`<section class="material-select-story"><h3>${escapeHTML(story.title)}</h3>${storyAssets(story.id).filter(m=>materialCanUse(m.id)).map(m=>`<button class="material-option" data-material="${m.id}" aria-pressed="${state.materials.includes(m.id)}">${state.materials.includes(m.id)?'☑':'□'} ${escapeHTML(m.name)}<span>${escapeHTML(m.kind)} · ${libraryStatus(m)} · ${escapeHTML((m.tags||[]).join('、'))}</span></button>`).join('')}</section>`).join('')}<div class="dialog-actions"><button class="primary" data-action="close-dialog">完成选择</button></div>`);
+}
+function selectMaterialsRefresh(){const content=$('#dialog-content');content.querySelectorAll('[data-material]').forEach(b=>{const m=materials.find(x=>x.id===b.dataset.material);b.setAttribute('aria-pressed',String(state.materials.includes(m.id)));b.innerHTML=`${state.materials.includes(m.id)?'☑':'□'} ${escapeHTML(m.name)}<span>${escapeHTML(m.kind)} · ${libraryStatus(m)} · ${escapeHTML((m.tags||[]).join('、'))}</span>`})}
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.libraryStory){libraryView.story=b.dataset.libraryStory;renderMaterials();return}
+ if(b.dataset.libraryStatus){libraryView.status=b.dataset.libraryStatus;renderMaterials();return}
+ if(b.dataset.libraryPreview){previewLibraryAsset(b.dataset.libraryPreview);return}
+ if(b.dataset.libraryReview){prepareLibraryReview(b.dataset.libraryReview);return}
+ const action=b.dataset.libraryAction;
+ if(action==='import')openLibraryImport();
+ if(action==='prepare')prepareLibraryReview();
+ if(action==='save-pending')savePendingLibrary();
+ if(action==='save-reviewed')saveReviewedLibrary();
+ if(action==='back'){libraryView.story=null;renderMaterials()}
+ if(action==='reset-search'){libraryView.query='';libraryView.status='all';renderMaterials()}
+});
+document.addEventListener('input',e=>{if(e.target.id==='library-search'){libraryView.query=e.target.value;renderStoryCards()}});
+document.addEventListener('change',e=>{
+ if(e.target.id==='library-files'){libraryImport.files=Array.from(e.target.files).slice(0,20).map(f=>({name:f.name,size:f.size,type:f.type,kind:libraryFileKind(f.name,f.type)}));$('#library-file-list').innerHTML=libraryImport.files.map(f=>`<p>${escapeHTML(f.name)} · ${escapeHTML(f.kind)} · ${Math.max(1,Math.round(f.size/1024))} KB</p>`).join('')}
+ if(e.target.id==='library-story-select')$('#library-new-story-wrap').hidden=e.target.value!=='new';
+});
+render();
+
+'use strict';
+// Local interaction prototype only: no scheduler, network requests or scraping.
+const scopeDefaults=categories.flatMap(c=>{
+ if(['creators','organizations'].includes(c.id))return [0,1,2].map(n=>({id:`${c.id}-account-${n}`,category:c.id,type:'account',name:`${c.id==='creators'?'达人':'机构'}示例 ${String.fromCharCode(65+n)}`,url:'',demo:true,enabled:true,status:n===2?'error':'ok',last:'11月19日 09:40（演示）'}));
+ if(c.id==='trends')return [{id:'trend-wide',category:c.id,type:'broad',name:'全站热点发现',demo:true,enabled:true,status:'ok',last:'11月19日 09:40（演示）'}];
+ return ['助学','陪伴','公益'].map((name,n)=>({id:`keyword-default-${n}`,category:c.id,type:'keyword',name,demo:true,enabled:true,status:n===1?'error':'ok',last:'11月19日 09:40（演示）'}));
+});
+var scopeStore=saved.scope&&Array.isArray(saved.scope.sources)?saved.scope:{sources:scopeDefaults,attempts:{}};
+scopeStore.attempts=scopeStore.attempts||{};
+let scopeCategory='trends';
+function scopeSources(category,includeRemoved=false){return scopeStore.sources.filter(s=>s.category===category&&(includeRemoved||!s.removed))}
+function scopeStatus(s){return s.removed?'已移除':!s.enabled?'已暂停':s.status==='error'?'检查异常（演示）':s.status==='ok'?'检查成功（演示）':'等待首次抓取'}
+function scopeSummary(category){const rows=scopeSources(category),active=rows.filter(s=>s.enabled),errors=active.filter(s=>s.status==='error');return {rows,active,errors,pending:active.filter(s=>s.status==='pending'),checked:active.filter(s=>s.status==='ok')}}
+function scopeTime(){return new Date().toLocaleString('zh-CN',{hour12:false})}
+function scopeUpdateView(){persist();render();showSources(scopeCategory)}
+accountOptions=function(){return scopeSources(state.category).filter(s=>s.type==='account').map(s=>({id:s.id,name:s.name,count:items.filter(i=>i.authorId===s.id).length}))};
+const scopeOriginalDiscovery=renderDiscovery;
+renderDiscovery=function(){scopeOriginalDiscovery();const sum=scopeSummary(state.category);const box=document.createElement('section');box.className='scope-overview';box.setAttribute('aria-label','板块更新概况');box.innerHTML=`<div><strong>板块更新概况</strong><span>${sum.active.length} 项追踪中 · ${sum.errors.length} 项异常 · ${sum.pending.length} 项待接入</span><p>${sum.checked.length?'最近一次来源成功检查：11月19日 09:40（演示） · 示例新增 0 条':'尚无成功检查记录'}${scopeStore.attempts[state.category]?'<br>最近演示检查：'+escapeHTML(scopeStore.attempts[state.category])+'，未连接外部来源':''}</p></div><button data-scope-open="${state.category}">${sum.errors.length?'展开异常与范围':'查看范围与状态'}</button>`;$('#main-content').querySelector('.controls').before(box);if(state.category==='charity'){const hint=document.createElement('p');hint.className='scope-feed-note';hint.textContent='持续追踪的关键词用于发现新内容；上方搜索仅筛选当前列表。卡片标注命中词。';$('#cards').before(hint)}};
+const scopeOriginalCards=renderCards;
+renderCards=function(){scopeOriginalCards();if(state.page!=='discovery')return;document.querySelectorAll('.scope-match').forEach(n=>n.remove());for(const card of document.querySelectorAll('[data-open]')){const item=items.find(i=>i.id===card.dataset.open);if(!item)continue;const matches=scopeSources(item.category).filter(s=>s.type==='keyword'&&s.enabled&&`${item.title} ${item.tag} ${item.reason}`.includes(s.name));if(matches.length){const p=document.createElement('p');p.className='scope-match';p.textContent='命中词（示例）：'+matches.map(s=>s.name).join('、');card.querySelector('.card-body').append(p)}}};
+showSources=function(category=state.category){
+ scopeCategory=category;const sum=scopeSummary(category),c=categories.find(x=>x.id===category),accounts=['creators','organizations'].includes(category),removed=scopeSources(category,true).filter(s=>s.removed);
+ showDialog(`<div class="scope-manager"><p class="eyebrow">OBSERVATION / SOURCES</p><h2>管理观察范围</h2><p>管理持续发现新内容的来源。所有检查状态均为演示，尚未接入抖音。</p><div class="scope-tabs" role="group" aria-label="管理板块">${categories.map(x=>`<button data-scope-tab="${x.id}" aria-pressed="${x.id===category}" class="${x.id===category?'active':''}">${x.name}</button>`).join('')}</div><section class="scope-status-panel"><h3>${c.name} · 更新概况</h3><div class="scope-metrics"><span><strong>${sum.active.length}</strong> 追踪中</span><span><strong>${sum.errors.length}</strong> 异常</span><span><strong>${sum.pending.length}</strong> 待接入</span><span><strong>${sum.rows.filter(s=>!s.enabled).length}</strong> 已暂停</span></div><p>${sum.checked.length?'最近一次来源成功检查：11月19日 09:40（演示） · 本轮示例新增 0 条':'尚无成功检查记录'}<br>“无新内容”只用于成功完成检查的来源；检查失败不代表没有新作品。</p>${scopeStore.attempts[category]?`<p>最近演示检查：${escapeHTML(scopeStore.attempts[category])}。外部数据未连接，原状态保留。</p>`:''}<button data-scope-check="${category}">演示检查一次</button></section>${sum.errors.length?`<details class="scope-errors"><summary>展开 ${sum.errors.length} 项异常</summary>${sum.errors.map(s=>`<div><strong>${escapeHTML(s.name)}</strong><p>示例原因：数据源暂时不可访问。最近成功检查：11月18日 18:00（演示）。</p><button data-scope-retry="${s.id}">演示重试</button></div>`).join('')}</details>`:''}<section class="scope-list"><div class="scope-section-title"><h3>${accounts?'关注账号':category==='trends'?'全站发现来源':'持续追踪关键词'}</h3>${accounts||category==='charity'?`<button class="primary" data-scope-add="${category}">${accounts?'添加账号':'添加关键词'}</button>`:''}</div>${category==='trends'?'<p>全站发现独立于关注账号和公益关键词，保留更广的热点视野。实际覆盖与更新频率待数据源接入后确定。</p>':''}${accounts?'<p>默认演示账号可增删；粘贴链接后等待识别。移除只停止追踪，已有参考和示例内容保留。</p>':''}${sum.rows.map(scopeRow).join('')||'<p class="scope-empty">暂无追踪项，可以添加新的账号或关键词。</p>'}${category==='creators'?`<div class="scope-suggestions"><strong>你此前提出的候选账号</strong><p>尚未核实账号链接；添加后需补充链接，不关联现有虚构作品。</p>${['良田','热月是我','爱画画的子衿'].map(n=>`<button data-scope-candidate="${n}">添加 ${n}</button>`).join('')}</div>`:''}</section>${removed.length?`<details class="scope-removed"><summary>已移除 ${removed.length} 项，可恢复</summary>${removed.map(s=>`<div class="scope-row"><strong>${escapeHTML(s.name)}</strong><button data-scope-restore="${s.id}">恢复追踪</button></div>`).join('')}</details>`:''}<div class="dialog-actions"><button data-action="close-dialog">返回内容流</button></div></div>`);
+};
+function scopeRow(s){return `<div class="scope-row"><div><strong>${escapeHTML(s.name)}</strong><span class="scope-badge">${scopeStatus(s)}</span><p>${s.type==='keyword'?'持续查找相关新视频，汇入公益议题；作品可命中多个词。':s.type==='broad'?'覆盖全站热点，不受公益账号名单限制。':s.demo?'默认演示账号，作品为虚构示例。':s.url?'已保存链接，尚未执行账号识别。':'尚未绑定账号链接。'}<br>${s.last?'最近检查：'+escapeHTML(s.last):'尚无检查记录'}${s.url?'<br><span class="scope-url">'+escapeHTML(s.url)+'</span>':''}</p></div><div class="scope-row-actions">${s.type==='account'&&!s.demo?`<button data-scope-edit="${s.id}">修改</button>`:''}<button data-scope-toggle="${s.id}">${s.enabled?'暂停追踪':'恢复追踪'}</button>${s.type!=='broad'?`<button data-scope-remove="${s.id}">移除</button>`:''}</div></div>`}
+function scopeAdd(category,candidate='',editId=''){
+ scopeCategory=category;const account=['creators','organizations'].includes(category),existing=scopeStore.sources.find(s=>s.id===editId);
+ showDialog(`<h2>${editId?'修改':account?'添加账号':'添加关键词'}</h2><p>${account?'粘贴抖音个人主页或分享链接，也可以先记录候选账号名称。原型仅保存设置，不访问链接。':'关键词将作为持续追踪规则，用于寻找新视频；不是一次性的列表搜索。'}</p><label>${account?'账号名称':'追踪关键词'}<input id="scope-name" maxlength="60" value="${escapeHTML(existing?.name||candidate)}" placeholder="${account?'可选，未填写时暂记为待识别账号':'例如：乡村教育'}"></label>${account?`<label>抖音账号链接<input id="scope-url" type="text" value="${escapeHTML(existing?.url||'')}" placeholder="粘贴主页或抖音分享链接" maxlength="2000"></label>`:''}<p id="scope-form-error" role="alert" class="scope-form-error"></p><p>所属板块：${categories.find(c=>c.id===category).name}。保存后标记为“等待首次抓取”。</p><div class="dialog-actions"><button data-scope-tab="${category}">取消</button><button class="primary" data-scope-save="${category}" data-edit-id="${escapeHTML(editId)}">保存追踪项</button></div>`)
+}
+function scopeParseLink(text){const match=text.match(/https?:\/\/[^\s<>"“”]+/i);if(!match)return null;try{const u=new URL(match[0]);if(!['www.douyin.com','douyin.com','v.douyin.com'].includes(u.hostname.toLowerCase()))return null;if(u.hostname==='v.douyin.com'&&u.pathname.length>1||/^\/user\/[^/]+/.test(u.pathname))return u.href}catch{}return null}
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.scopeOpen||b.dataset.scopeTab){showSources(b.dataset.scopeOpen||b.dataset.scopeTab);return}
+ if(b.dataset.scopeAdd){scopeAdd(b.dataset.scopeAdd);return}
+ if(b.dataset.scopeCandidate){scopeAdd('creators',b.dataset.scopeCandidate);return}
+ if(b.dataset.scopeEdit){const s=scopeStore.sources.find(x=>x.id===b.dataset.scopeEdit);scopeAdd(s.category,'',s.id);return}
+ if(b.dataset.scopeSave){const category=b.dataset.scopeSave,account=category!=='charity',name=$('#scope-name').value.trim(),raw=account?$('#scope-url').value.trim():'',url=raw?scopeParseLink(raw):'',error=$('#scope-form-error');if(!name&&!raw){error.textContent=account?'请填写账号名称或链接。':'请输入追踪关键词。';return}if(raw&&!url){error.textContent='请使用抖音个人主页或 v.douyin.com 分享链接。';return}const edit=b.dataset.editId;const duplicate=scopeSources(category).find(s=>s.id!==edit&&((url&&s.url===url)||(name&&s.name.toLowerCase()===name.toLowerCase())));if(duplicate){error.textContent='这项已在追踪列表中，可以返回查看。';return}const record={id:edit||'scope-'+Date.now()+'-'+Math.random().toString(36).slice(2,7),category,type:account?'account':'keyword',name:name||'待识别账号',url,demo:false,enabled:true,status:'pending',last:''};if(edit)Object.assign(scopeStore.sources.find(s=>s.id===edit),record);else scopeStore.sources.push(record);scopeUpdateView();toast('追踪设置已保存；等待真实数据源接入');return}
+ const id=b.dataset.scopeToggle||b.dataset.scopeRemove||b.dataset.scopeRestore||b.dataset.scopeRetry;if(id){const s=scopeStore.sources.find(x=>x.id===id);if(!s)return;if(b.dataset.scopeToggle)s.enabled=!s.enabled;if(b.dataset.scopeRemove){s.removed=true;if(state.account===s.id)state.account='all'}if(b.dataset.scopeRestore){s.removed=false;s.enabled=true}if(b.dataset.scopeRetry){scopeStore.attempts[s.category]=scopeTime();toast('已演示重试反馈；尚未连接数据源，异常状态保留')}scopeCategory=s.category;scopeUpdateView();return}
+ if(b.dataset.scopeCheck){scopeStore.attempts[b.dataset.scopeCheck]=scopeTime();scopeUpdateView();toast('已演示检查反馈，没有执行真实抓取')}
+});
+// Refresh feedback uses the same board-level status as the range manager.
+document.addEventListener('click',e=>{if(e.target.closest('[data-action="refresh"]')){scopeStore.attempts[state.category]=scopeTime();persist();renderDiscovery()}});
+render();
+
+'use strict';
+// Presentation examples only: no model or suitability evaluation is connected.
+const analysisPreview={};
+const storyRecommendationView={expanded:false};
+function rankedLibraryStories(){
+ const task=state.task.trim().toLowerCase();
+ return libraryStories.filter(s=>!s.inbox).map(story=>{
+  const assets=storyAssets(story.id).filter(m=>materialCanUse(m.id));
+  const chosen=assets.filter(m=>state.materials.includes(m.id));
+  const terms=[...new Set(assets.flatMap(m=>Array.isArray(m.tags)?m.tags:[]))].filter(t=>typeof t==='string'&&t.length>=2);
+  const hits=task?terms.filter(t=>task.includes(t.toLowerCase())):[];
+  const titleHit=task&&story.title.length>=2&&task.includes(story.title.toLowerCase());
+  return {story,assets,chosen,hits,titleHit,rank:(chosen.length?10000:0)+hits.length*10+(titleHit?5:0)};
+ }).filter(s=>s.assets.length).sort((a,b)=>b.rank-a.rank||a.story.title.localeCompare(b.story.title,'zh-CN'));
+}
+function storyRecommendationReason(r){return [r.chosen.length?'已选优先：本次已选 '+r.chosen.length+' 份资料':'',r.hits.length?'任务命中标签：'+r.hits.join('、'):r.titleHit?'任务提及该故事名称':state.task?'尚无直接标签命中，相关性待确认':'尚未填写任务，可先查看可用故事'].filter(Boolean).join('；')}
+function storyRecommendationsHTML(){
+ const rows=rankedLibraryStories(),excluded=materials.filter(m=>!materialCanUse(m.id)).length,visible=storyRecommendationView.expanded?rows:rows.slice(0,3);
+ return `<section class="story-recommendations" aria-label="全库故事推荐"><h4>从机构素材库寻找故事</h4><p class="story-recommendation-scope">检索整个素材库 · ${rows.length} 个故事有可用资料${excluded?' · '+excluded+' 份待确认或内部资料不参与':''}</p><p class="story-recommendation-rule">已选故事优先，其次看任务相关性。当前按标签与名称匹配演示，表达设计能否复用仍需评估。</p>${visible.map(r=>`<article class="story-recommendation-card"><div class="story-recommendation-heading"><strong>${escapeHTML(r.story.title)}</strong><span>${r.chosen.length?'已选优先':r.hits.length||r.titleHit?'任务相关示例':'可用待匹配'}</span></div><p>${escapeHTML(storyRecommendationReason(r))}</p><p>可用：${[...new Set(r.assets.map(m=>m.kind))].map(kind=>escapeHTML(kind)+' '+r.assets.filter(m=>m.kind===kind).length).join(' · ')}。资料可用性不等于足以完成拍摄。</p><button class="small" data-pick-story="${r.story.id}">查看并选择故事素材</button></article>`).join('')||'<div class="story-recommendation-empty">暂无已确认可用的故事。请先到素材库归类资料并确认使用范围。</div>'}${rows.length>3?`<button class="small wide" data-story-recommendation-expand>${storyRecommendationView.expanded?'收起其他故事':'查看其余 '+(rows.length-3)+' 个可用故事'}</button>`:''}</section>`;
+}
+function pickStoryMaterials(storyId){
+ const row=rankedLibraryStories().find(r=>r.story.id===storyId);if(!row){toast('该故事暂无可用资料，请先到素材库确认');return}
+ showDialog(`<h2>${escapeHTML(row.story.title)}</h2><p>${escapeHTML(storyRecommendationReason(row))}</p><p>逐份选择需要使用的资料。只有已确认可用于创作的内容出现在这里，原文与画面仍需核对。</p><div class="story-picker">${row.assets.map(m=>`<button class="material-option" data-pick-story-material="${m.id}" data-pick-story-id="${storyId}" aria-pressed="${state.materials.includes(m.id)}">${state.materials.includes(m.id)?'☑':'□'} ${escapeHTML(m.name)}<span>${escapeHTML(m.kind)} · ${escapeHTML((m.tags||[]).join('、'))} · ${libraryStatus(m)}</span></button>`).join('')}</div><div class="dialog-actions"><button class="primary" data-action="close-dialog">完成选择</button></div>`);
+}
+const analysisOriginalDetail=renderDetail;
+renderDetail=function(){
+ analysisOriginalDetail();const panel=$('#detail-panel'),item=items.find(i=>i.id===state.detail);if(panel.hidden||!item)return;
+ const scrollPosition=panel.scrollTop;
+ const adopted=state.references.some(r=>r.id===item.id&&r.pattern===item.pattern);
+ panel.querySelector('.core-analysis').innerHTML=`<h3>传播亮点</h3><p>${escapeHTML(item.reason)}</p><div class="core-design"><span class="core-design-label">值得学习的表达设计</span><strong>${escapeHTML(item.pattern)}</strong></div><p class="analysis-evidence-note">这是表达设计的示例解读；真实传播效果及成因需结合视频和数据验证。</p><button class="primary wide small" data-adopt="${item.id}">${adopted?'已采用这个设计':'采用这个表达设计'}</button>`;
+ const fit=panel.querySelector('.match-overview');fit.className='institution-fit';fit.setAttribute('aria-label','机构适配度');
+ const mode=analysisPreview[item.id]||'pending',score=mode==='ready'?4:mode==='gap'?2:null;
+ const selectedAssets=state.materials.map(id=>materials.find(m=>m.id===id)).filter(Boolean);
+ fit.innerHTML=`<div class="fit-heading"><h3>机构适配度</h3><span>${score?'星级样式示例':'待评估'}</span></div><div class="fit-stars" aria-label="${score?score+'星示例':'尚未评分'}">${score?'★'.repeat(score)+'☆'.repeat(5-score):'☆☆☆☆☆'} <strong>${score?score+'/5（示例）':'暂不评分'}</strong></div><p>${mode==='ready'?'示例情境：主题相关，已有可用人物素材，仍需确认拍摄与呈现条件。':mode==='gap'?'示例情境：表达设计可借鉴，但关键画面和人物原声尚需补采。':'传播亮点不等于适合机构。先结合本次任务、素材和执行条件判断。'}</p><div class="fit-basis"><strong>当前评估依据</strong><p>本次任务：${state.task?escapeHTML(state.task):'尚未填写'}</p><p>已选素材：${selectedAssets.length?selectedAssets.map(m=>escapeHTML(m.name)).join('、'):'尚未选择'}</p><p>待确认：主题是否契合、素材是否支撑该设计、补采成本与人物呈现要求。</p></div><div class="fit-actions"><button class="small" data-action="edit-task">${state.task?'调整任务':'补充任务'}</button><button class="small" data-action="select-materials">选择素材</button></div><p class="analysis-evidence-note">尚未接入AI适配评估，不依据播放量或点赞量推算机构适配星级。</p><details class="fit-preview"><summary>预览星级与理由的呈现</summary><p>以下切换仅演示界面，不代表对当前视频的真实评价。</p><div><button data-fit-mode="ready">素材充足示例</button><button data-fit-mode="gap">需要补采示例</button><button data-fit-mode="pending">返回待评估</button></div></details>`;
+ fit.querySelector('.fit-actions').insertAdjacentHTML('afterend',storyRecommendationsHTML());
+ if(mode!=='pending')fit.querySelector('.fit-preview').open=true;
+ const analysis=panel.querySelector('[data-expansion="analysis"] summary');analysis.textContent='传播亮点：拆解与证据';
+ const match=panel.querySelector('[data-expansion="materials"]');match.querySelector('summary').textContent='机构适配：素材支持与缺口';
+ const body=match.querySelector('.expander-body');
+ body.innerHTML=`<p>上方候选来自整个机构素材库，已选故事优先。推荐只提供选材线索，不能替代对原始资料的核实。</p><h3>已有素材支持</h3>${selectedAssets.length?selectedAssets.map(m=>`<div class="match-card"><h3>${escapeHTML(m.name)}</h3><p>${escapeHTML(m.kind)} · ${escapeHTML((m.tags||[]).join('、'))}</p><button class="small" data-material="${m.id}">移除素材</button></div>`).join(''):'<p>尚未选材，可从上方故事推荐逐份加入。</p>'}<h3>需要补什么</h3><p>适配结论应写清：已有哪份资料支持、缺少哪些画面或采访、怎样改写原设计。</p><button class="wide small" data-action="select-materials">手动查看全部可用素材</button>`;
+ panel.scrollTop=scrollPosition;
+};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-fit-mode]');if(b&&state.detail){analysisPreview[state.detail]=b.dataset.fitMode;renderDetail()}});
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.hasAttribute('data-story-recommendation-expand')){storyRecommendationView.expanded=!storyRecommendationView.expanded;renderDetail();return}
+ if(b.dataset.pickStory){pickStoryMaterials(b.dataset.pickStory);return}
+ if(b.dataset.pickStoryMaterial){const id=b.dataset.pickStoryMaterial;if(!materialCanUse(id)){toast('请先确认资料使用范围');return}state.materials=state.materials.includes(id)?state.materials.filter(x=>x!==id):[...state.materials,id];persist();renderBoard();renderDetail();pickStoryMaterials(b.dataset.pickStoryId)}
+});
+// Task/material changes update the contextual basis without creating a score.
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(b&&(b.dataset.action==='save-task'||b.dataset.removeMaterial))renderDetail()});
+render();
+
+'use strict';
+// Story-based direction comparison. Narrative pairing is a transparent UI demo.
+const storyOriginalBasisSignature=basisSignature;
+basisSignature=function(){return JSON.stringify({input:storyOriginalBasisSignature(),library:libraryStories.map(s=>({id:s.id,title:s.title,assets:storyAssets(s.id).map(m=>({id:m.id,revision:m.revision,usage:m.usage,checked:m.factChecked,tags:m.tags,kind:m.kind}))}))})};
+const storyOriginalDirection=currentDirection;
+currentDirection=function(){return state.creation.snapshot?.storyDirections?.find(d=>d.id===state.creation.chosen)||storyOriginalDirection()};
+function storyDirectionFor(row){
+ const meta=row.assets.map(m=>[m.name,...(m.tags||[])].join(' ')).join(' ');
+ const model=directionModels.find(d=>d.id===(/采访|访谈|原声/.test(meta)?'question':row.assets.some(m=>m.kind==='视频')?'process':'detail'));
+ const expression=model.id==='question'?/问题|回答|原话|原声|采访|对话/:model.id==='process'?/过程|行动|同行|记录/:/细节|日常|场景|开场/;
+ const reference=state.references.map(r=>({r,item:items.find(i=>i.id===r.id)})).find(x=>x.r.pattern&&expression.test(x.r.pattern));
+ return {...model,id:'story-direction-'+row.story.id,storyId:row.story.id,storyTitle:row.story.title,assetIds:row.assets.map(m=>m.id),chosenAssetIds:row.chosen.map(m=>m.id),reason:storyRecommendationReason(row),pattern:reference?.r.pattern||model.name,referenceId:reference?.item.id||null,referenceTitle:reference?.item.title||'',pairReason:model.id==='question'?'资料名称含采访或原声线索，先以问题串联结构演示；需核对真实回答。':model.id==='process'?'资料组包含视频，先以行动过程结构演示；需核对画面是否连续。':'资料组以文字等资料为主，先用细节切入结构演示；具体细节与画面仍待核实。'};
+}
+showDirections=function(){
+ if(!state.task.trim()){toast('先用一句话写下本次任务');$('#creation-task')?.focus();return}
+ const rows=rankedLibraryStories().slice(0,3),directions=rows.map(storyDirectionFor);
+ state.creation.snapshot={schema:'story-v1',signature:basisSignature(),task:state.task,referenceNames:state.references.map(r=>items.find(i=>i.id===r.id).title),patterns:state.references.map(r=>r.pattern).filter(Boolean),materialNames:state.materials.map(id=>materials.find(m=>m.id===id).name),storyDirections:directions};
+ state.creation.chosen=null;persist();renderCreation();toast(directions.length?`已展示 ${directions.length} 个故事方向示例，尚未调用AI`:'暂无可用故事，请先完善素材库');
+};
+renderDirections=function(){
+ const b=state.creation.snapshot;
+ if(!Array.isArray(b.storyDirections))return `<section class="wire-panel"><h2>更新为按故事比较</h2><p>旧版方向和草稿仍保留。请展开任务与依据，重新查看按不同故事组织的创作方向。</p><button data-action="show-directions">查看故事方向</button></section>`;
+ if(!b.storyDirections.length)return `<section class="creation-placeholder"><h2>还没有可用的故事方向</h2><p>素材库尚无已确认可用的故事。可先补充资料或确认使用范围，再回到这里查看方向。</p><button data-page="materials">前往素材库</button></section>`;
+ return `<section class="directions-section"><div class="creation-section-heading"><div><h2>比较 ${b.storyDirections.length} 个故事方向</h2><p>同一任务，分别比较不同故事及其表达设计。</p><p>任务：${escapeHTML(b.task)}</p></div><span class="outline-badge">故事与讲法配对示例</span></div>${b.storyDirections.length===1?'<p class="direction-availability">目前只有一个可用故事，先展示这一个方向；补充其他故事后可继续比较。</p>':''}<div class="direction-grid">${b.storyDirections.map(d=>{
+ const assets=d.assetIds.map(id=>materials.find(m=>m.id===id)).filter(Boolean);
+ return `<article class="direction-card story-direction-card"><span class="tag">${d.chosenAssetIds.length?'已选故事优先':'全库可用候选'}</span><h3>${escapeHTML(d.storyTitle)}</h3><p class="direction-expression"><span>搭配表达设计</span><strong>${escapeHTML(d.pattern)}</strong></p><h4>为什么推荐这个故事</h4><p>${escapeHTML(d.reason)}</p><h4>为什么这样讲</h4><p>${escapeHTML(d.pairReason)}</p><h4>可用素材</h4><ul class="direction-asset-list">${assets.map(m=>`<li>${escapeHTML(m.name)}<span>${escapeHTML(m.kind)}${d.chosenAssetIds.includes(m.id)?' · 本次已选':' · 候选待选'}</span></li>`).join('')}</ul><h4>参考设计来源</h4><p>${d.referenceTitle?escapeHTML(d.referenceTitle):'暂无直接匹配的已选参考，当前使用预设叙事结构示例。'}</p><h4>执行条件与补采需求</h4><p>${escapeHTML(d.need)} 是否已有对应内容需人工核对。</p><details class="direction-structure"><summary>查看叙事顺序</summary><ol>${d.steps.map(s=>`<li>${escapeHTML(s)}</li>`).join('')}</ol></details><p class="direction-gap">仅按资料名称和类型演示配对，不代表已理解故事内容或完成AI方案。</p><button class="primary wide" data-direction="${d.id}">选这个故事与讲法</button></article>`;
+ }).join('')}</div></section>`;
+};
+let directionPick=null;
+function renderDirectionPick(){
+ const d=state.creation.snapshot.storyDirections.find(x=>x.id===directionPick.id),assets=d.assetIds.map(id=>materials.find(m=>m.id===id)).filter(m=>m&&materialCanUse(m.id));
+ showDialog(`<h2>确认本方向使用的素材</h2><p>主故事：${escapeHTML(d.storyTitle)}<br>表达设计：${escapeHTML(d.pattern)}</p><p>请选择支撑这个故事的资料。其他故事仍保留在参考板中，此方向的草稿只引用下方确认的素材。</p><div class="direction-picker">${assets.map(m=>`<button class="material-option" data-direction-material="${m.id}" aria-pressed="${directionPick.ids.includes(m.id)}">${directionPick.ids.includes(m.id)?'☑':'□'} ${escapeHTML(m.name)}<span>${escapeHTML(m.kind)} · ${escapeHTML((m.tags||[]).join('、'))} · ${libraryStatus(m)}</span></button>`).join('')}</div><p>${directionPick.ids.length?'已选 '+directionPick.ids.length+' 份资料。事实与具体画面仍需核对。':'至少选择一份资料，再展开该故事的方案。'}</p><div class="dialog-actions"><button data-action="close-dialog">返回比较</button><button class="primary" data-direction-confirm ${directionPick.ids.length?'':'disabled'}>确认素材并展开方案</button></div>`);
+}
+const storyOriginalSelectDirection=selectDirection;
+selectDirection=function(id){
+ const d=state.creation.snapshot?.storyDirections?.find(x=>x.id===id);if(!d){storyOriginalSelectDirection(id);return}
+ if(creationIsStale()){toast('依据已变化，请先重新查看方向');return}
+ directionPick={id,ids:d.assetIds.filter(id=>state.materials.includes(id)&&materialCanUse(id))};renderDirectionPick();
+};
+const storyOriginalMakeDraft=makeDraft;
+makeDraft=function(d){
+ if(!d.storyId)return storyOriginalMakeDraft(d);
+ const b=state.creation.snapshot,assets=d.chosenAssetIds.map(id=>materials.find(m=>m.id===id)).filter(Boolean),source=assets.map(m=>m.name).join('、');
+ return {title:`${b.task}｜${d.storyTitle}｜${d.pattern}`,summary:`主故事：${d.storyTitle}。围绕任务“${b.task}”，采用“${d.pattern}”组织叙事。当前仅使用已确认选择的资料，具体经历、人物原话和传播目标仍需核实。`,opening:d.open,structure:d.steps.join(' → '),reference:d.referenceTitle||'暂无直接匹配的已选参考；使用预设结构示例',patterns:d.pattern,savedAt:'',shots:d.steps.map((step,i)=>({time:['0—5秒','5—20秒','20—40秒','40—60秒'][i],visual:`[待核实 · ${d.storyTitle}] ${step}所需的真实画面。`,audio:i===0?`[结构建议，非人物原话] ${d.open}`:'[待核实] 从本故事的真实资料提取旁白或采访，不借用其他案例的人物经历。',source:source+'（本方向已选资料，片段及事实待核对）',notes:i===3?'核实本故事的参与入口、发布条件及人物意愿。':d.need+' 核实是否具备，缺少则补采或调整。'}))};
+};
+const storyOriginalScriptEditor=renderScriptEditor;
+renderScriptEditor=function(d,draft){
+ const html=storyOriginalScriptEditor({...d,name:d.pattern||d.name},draft);if(!d.storyId)return html;
+ return `<section class="direction-story-summary"><strong>本方案主故事：${escapeHTML(d.storyTitle)}</strong><p>表达设计：${escapeHTML(d.pattern)}<br>本方向素材：${escapeHTML(d.chosenAssetIds.map(id=>materials.find(m=>m.id===id)?.name||'资料已变化').join('、'))}</p><p>参考板可保留其他故事，本方案按这个主故事展开。</p></section>`+html.replace(escapeHTML(state.creation.snapshot.materialNames.join('、')||'待补充'),escapeHTML(d.chosenAssetIds.map(id=>materials.find(m=>m.id===id)?.name||'资料已变化').join('、')));
+};
+const storyOriginalRenderCreation=renderCreation;
+renderCreation=function(){storyOriginalRenderCreation();const placeholder=$('.creation-placeholder p');if(!state.creation.snapshot&&placeholder)placeholder.textContent='输入任务后，从机构素材库寻找不同故事，比较各自适合的表达设计。';const note=$('.creation-prototype-note');if(note&&note.closest('.creation-brief'))note.textContent='线框演示：从全库可用故事组织方向，已选优先。讲法配对使用名称、标签和资料类型规则，未调用AI。'};
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.directionMaterial&&directionPick){const id=b.dataset.directionMaterial;if(!materialCanUse(id))return;directionPick.ids=directionPick.ids.includes(id)?directionPick.ids.filter(x=>x!==id):[...directionPick.ids,id];renderDirectionPick();return}
+ if(b.hasAttribute('data-direction-confirm')&&directionPick){
+  if(creationIsStale()){toast('依据已变化，请返回更新方向');return}
+  const d=state.creation.snapshot.storyDirections.find(x=>x.id===directionPick.id),chosen=directionPick.ids.filter(id=>d.assetIds.includes(id)&&materialCanUse(id));if(!chosen.length)return;
+  state.materials=[...new Set([...state.materials.filter(id=>!d.assetIds.includes(id)),...chosen])];
+  state.creation.snapshot.materialNames=state.materials.map(id=>materials.find(m=>m.id===id).name);
+  state.creation.snapshot.storyDirections.forEach(row=>row.chosenAssetIds=row.assetIds.filter(id=>state.materials.includes(id)));
+  state.creation.snapshot.signature=basisSignature();state.creation.chosen=d.id;
+  const key=currentDraftKey();if(!state.creation.drafts[key])state.creation.drafts[key]=makeDraft(d);
+  persist();$('#dialog').close();renderBoard();renderCreation();toast('已按主故事和确认的素材展开方案示例');
+ }
+});
+render();
+
+'use strict';
+// AI revision UX only. Presets are local text rules; custom requests are not sent.
+let revisionSelection=null,revisionSession=null;
+const revisionOriginalEditor=renderScriptEditor;
+function revisionFieldLabel(path){const [a,b]=path.split('.');return a==='shots'?`镜头 ${Number(b)+1}`:({title:'方案标题',summary:'创作思路',opening:'开场设计',structure:'叙事顺序'}[a]||a)}
+function revisionLabel(path){if(!path.startsWith('shots.'))return revisionFieldLabel(path);const parts=path.split('.');return revisionFieldLabel(path)+' · '+({visual:'画面',audio:'旁白与采访',time:'时长',notes:'执行要求'}[parts[2]]||parts[2])}
+function revisionGet(d,path){return path.split('.').reduce((v,k)=>v?.[k],d)??''}
+function revisionSet(d,path,value){const keys=path.split('.');let obj=d;for(const key of keys.slice(0,-1))obj=obj[key];obj[keys.at(-1)]=value}
+renderScriptEditor=function(d,draft){
+ let html=revisionOriginalEditor(d,draft);
+ const toolbar=`<section class="revision-toolbar"><div><strong>优先局部改稿</strong><p>选中文字后修改，或从各镜头进入。候选经确认后才替换。</p></div><div class="revision-toolbar-actions"><button data-revision-selection disabled>修改选中文字</button><button data-revision-whole>整稿修改</button><button data-revision-undo ${draft.revisionHistory?.length?'':'disabled'}>撤销上次采用</button></div><p class="revision-prototype-note">AI改稿交互演示：预设仅执行本地文字规则；自定义要求可记录并手工调整候选，未接入模型。</p></section>`;
+ html=html.replace('<section class="script-editor">','<section class="script-editor">'+toolbar);
+ return html.replace(/<strong>镜头 (\d+)<\/strong>/g,(match,n)=>match+`<button class="small revision-shot" data-revision-shot="${Number(n)-1}" aria-label="局部修改镜头${n}">局部修改</button>`);
+};
+function revisionOpen(paths,fragment=null){
+ const draft=currentDraft();if(!draft)return;if(creationIsStale()){toast('任务或素材已变化，请先更新创作方向');return}
+ revisionSession={key:currentDraftKey(),paths,fragment,originals:Object.fromEntries(paths.map(p=>[p,String(revisionGet(draft,p))])),instruction:'',preset:'custom',stage:'request',candidates:{}};
+ renderRevisionDialog();
+}
+function renderRevisionDialog(){
+ const s=revisionSession;if(!s)return;const whole=s.paths.length>1,fragment=s.fragment;
+ const scope=whole?'整份方案的表达与画面建议':fragment?'选中的文字':revisionLabel(s.paths[0]);
+ if(s.stage==='request'){
+ showDialog(`<div class="revision-dialog"><h2>${whole?'整稿修改':'局部修改'}</h2><p><strong>修改范围：${escapeHTML(scope)}</strong><br>主故事、素材来源和人物事实保持原有依据。</p>${!whole&&!fragment&&s.paths[0].startsWith('shots.')?`<label for="revision-target">本镜头要修改哪一项？</label><select id="revision-target">${['audio','visual','time','notes'].map(k=>{const path=s.paths[0].split('.').slice(0,2).join('.')+'.'+k;return `<option value="${path}" ${path===s.paths[0]?'selected':''}>${revisionLabel(path)}</option>`}).join('')}</select>`:''}<label for="revision-preset">演示方式</label><select id="revision-preset"><option value="custom" ${s.preset==='custom'?'selected':''}>自定义要求，手工编辑候选</option><option value="short" ${s.preset==='short'?'selected':''}>预设：精简文字</option><option value="rhythm" ${s.preset==='rhythm'?'selected':''}>预设：按句分行，调整阅读节奏</option></select><label for="revision-instruction">希望怎样修改？</label><textarea id="revision-instruction" maxlength="2000" placeholder="例如：这段旁白太长，保留关键信息，让表达更自然">${escapeHTML(s.instruction)}</textarea><details class="revision-original"><summary>查看当前内容</summary><pre>${escapeHTML(whole?s.paths.map(p=>revisionLabel(p)+'：'+s.originals[p]).join('\n\n'):fragment?fragment.text:s.originals[s.paths[0]])}</pre></details><p class="revision-prototype-note">自定义要求不会被AI执行；候选先保留原文，可在下一步手工修改。预设仅演示文字处理，不代表完成语义改写。</p><p id="revision-error" role="alert"></p><div class="dialog-actions"><button data-action="close-dialog">取消</button><button class="primary" data-revision-preview>预览修改候选</button></div></div>`);return;
+ }
+ showDialog(`<div class="revision-dialog"><h2>修改前后对照</h2><p>范围：${escapeHTML(scope)}<br>要求：${escapeHTML(s.instruction||'执行所选文字规则')}<br>候选可继续编辑，尚未替换原稿。</p>${s.paths.map((path,i)=>`<section class="revision-comparison"><h3>${escapeHTML(revisionLabel(path))}${fragment?' · 选中片段':''}</h3><details class="revision-original" ${whole?'':'open'}><summary>修改前</summary><pre>${escapeHTML(fragment?fragment.text:s.originals[path])}</pre></details><label for="revision-candidate-${i}">修改候选</label><textarea id="revision-candidate-${i}" data-revision-candidate="${i}">${escapeHTML(s.candidates[path])}</textarea></section>`).join('')}<p class="revision-prototype-note">请核对事实与原意。主故事、素材引用与未选择的内容不会被此次操作替换。</p><div class="dialog-actions"><button data-revision-back>调整要求</button><button data-action="close-dialog">放弃修改</button><button class="primary" data-revision-apply>采用修改</button></div></div>`);
+}
+function revisionRule(text,preset){
+ if(preset==='rhythm')return text.replace(/([。！？；])\s*/g,'$1\n').trim();
+ if(preset==='short')return text.replace(/当前仅使用已确认选择的资料，/g,'').replace(/具体经历、人物原话和传播目标仍需核实。/g,'经历、原话与目标待核实。').replace(/所需的真实画面/g,'的真实画面').replace(/依据机构资料整理旁白/g,'据机构资料整理旁白').replace(/具体事实以机构核实资料为准/g,'事实以核实资料为准').replace(/[ \t]{2,}/g,' ').trim();
+ return text;
+}
+document.addEventListener('select',e=>{
+ const field=e.target;if(!field.matches?.('.script-editor textarea'))return;
+ const path=field.dataset.draftField||(field.dataset.shot!==undefined&&['visual','audio','notes'].includes(field.dataset.shotField)?`shots.${field.dataset.shot}.${field.dataset.shotField}`:null);
+ const start=field.selectionStart,end=field.selectionEnd;
+ revisionSelection=path&&end>start?{key:currentDraftKey(),path,start,end,text:field.value.slice(start,end)}:null;
+ const button=$('[data-revision-selection]');if(button)button.disabled=!revisionSelection;
+});
+document.addEventListener('change',e=>{if(e.target.id==='revision-target'&&revisionSession){const path=e.target.value;revisionSession.paths=[path];revisionSession.originals={[path]:String(revisionGet(currentDraft(),path))};const label=$('.revision-dialog>p strong');if(label)label.textContent='修改范围：'+revisionLabel(path);const before=$('.revision-original pre');if(before)before.textContent=revisionSession.originals[path]}});
+document.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.hasAttribute('data-revision-shot')){revisionOpen([`shots.${b.dataset.revisionShot}.audio`]);return}
+ if(b.hasAttribute('data-revision-selection')){const range=revisionSelection;if(!range||range.key!==currentDraftKey()||String(revisionGet(currentDraft(),range.path)).slice(range.start,range.end)!==range.text){toast('请重新选中需要修改的文字');return}revisionOpen([range.path],range);return}
+ if(b.hasAttribute('data-revision-whole')){const d=currentDraft();if(d)revisionOpen(['title','summary','opening','structure',...d.shots.flatMap((_,i)=>[`shots.${i}.visual`,`shots.${i}.audio`])]);return}
+ if(b.hasAttribute('data-revision-preview')&&revisionSession){const s=revisionSession;s.instruction=$('#revision-instruction').value.trim();s.preset=$('#revision-preset').value;if(s.preset==='custom'&&!s.instruction){$('#revision-error').textContent='请写下修改要求，或选择一种预设演示。';return}s.candidates=Object.fromEntries(s.paths.map(p=>[p,revisionRule(s.fragment?s.fragment.text:s.originals[p],s.preset)]));s.stage='compare';renderRevisionDialog();return}
+ if(b.hasAttribute('data-revision-back')&&revisionSession){revisionSession.paths.forEach((p,i)=>revisionSession.candidates[p]=$(`#revision-candidate-${i}`).value);revisionSession.stage='request';renderRevisionDialog();return}
+ if(b.hasAttribute('data-revision-apply')&&revisionSession){const s=revisionSession,d=currentDraft();if(!d||s.key!==currentDraftKey()||creationIsStale()||s.paths.some(p=>String(revisionGet(d,p))!==s.originals[p])){toast('原稿或依据已变化，请关闭候选后重新修改');return}const changes=s.paths.map((path,i)=>{const candidate=$(`#revision-candidate-${i}`).value,after=s.fragment?s.originals[path].slice(0,s.fragment.start)+candidate+s.originals[path].slice(s.fragment.end):candidate;return {path,before:s.originals[path],after}}).filter(c=>c.before!==c.after);if(!changes.length){toast('候选与原稿相同，可以先编辑候选');return}changes.forEach(c=>revisionSet(d,c.path,c.after));d.revisionHistory=[...(d.revisionHistory||[]),{time:new Date().toISOString(),instruction:s.instruction,changes}].slice(-10);persist();$('#dialog').close();revisionSession=null;revisionSelection=null;renderCreation();toast('已采用修改，可撤销最近一次采用');return}
+ if(b.hasAttribute('data-revision-undo')){const d=currentDraft(),last=d?.revisionHistory?.at(-1);if(!last)return;if(last.changes.some(c=>String(revisionGet(d,c.path))!==c.after)){toast('这些内容已有后续编辑，未覆盖当前版本');return}last.changes.forEach(c=>revisionSet(d,c.path,c.before));d.revisionHistory.pop();persist();renderCreation();toast('已撤销最近一次采用');}
+});
+render();
+
+'use strict';
+let draftExportURL=null;
+function draftExportMarkdown(){
+ const d=currentDraft(),direction=currentDirection();if(!d)return '';
+ const lines=['# '+d.title,'','交互示例草稿，未调用AI，不可直接作为真实发布内容。','','## 本次任务',state.creation.snapshot.task,'','## 主故事',direction?.storyTitle||'旧版结构示例，主故事待确认','','## 表达设计',d.patterns,'','## 创作思路',d.summary,'','## 开场',d.opening,'','## 叙事顺序',d.structure,'','## 外部参考',d.reference];
+ d.shots.forEach((shot,i)=>lines.push('','## 镜头 '+(i+1)+' '+shot.time,'画面：'+shot.visual,'声音：'+shot.audio,'素材：'+shot.source,'执行：'+shot.notes));
+ return lines.join('\n');
+}
+exportDraft=function(){
+ if(creationIsStale()){toast('请先依据最新任务和素材重新查看方向');return}
+ const text=draftExportMarkdown();if(!text)return;
+ if(draftExportURL)URL.revokeObjectURL(draftExportURL);
+ draftExportURL=URL.createObjectURL(new Blob([text],{type:'text/markdown;charset=utf-8'}));
+ const filename=(currentDraft().title||'renai-script-draft').replace(/[<>:"/\\|?*\u0000-\u001f]/g,'-').slice(0,80)+'.md';
+ showDialog(`<h2>导出草稿</h2><p>下方为当前版本的实际输出，包含任务、主故事、表达设计、参考及全部分镜。请核对后下载或复制。</p><label for="draft-export-preview">导出内容（Markdown）</label><textarea id="draft-export-preview" class="draft-export-preview" readonly></textarea><p class="export-download-note">浏览器未开始下载时，可使用“复制全文”取用内容。复制失败时，也可在文本框内全选复制。</p><div id="draft-export-status" role="status" class="draft-export-status">尚未发起下载</div><div class="dialog-actions export-actions"><button data-action="close-dialog">返回编辑</button><button data-export-copy>复制全文</button><a class="export-download-link" id="draft-export-download" download="${escapeHTML(filename)}">下载 Markdown</a></div>`);
+ $('#draft-export-preview').value=text;$('#draft-export-download').href=draftExportURL;
+};
+document.addEventListener('click',async e=>{
+ const download=e.target.closest('#draft-export-download');if(download){$('#draft-export-status').textContent='已请求浏览器下载。请在下载记录中确认；也可直接复制全文。';return}
+ if(e.target.closest('[data-export-copy]')){const field=$('#draft-export-preview'),status=$('#draft-export-status');status.textContent='正在复制…';try{await Promise.race([navigator.clipboard.writeText(field.value),new Promise((_,reject)=>setTimeout(()=>reject(new Error('clipboard timeout')),1500))]);status.textContent='已复制全文，可粘贴到文档。'}catch{field.focus();field.select();status.textContent='自动复制未完成，已选中全文，请按 Ctrl+C 手动复制。'}}
+});
+
+</script></body>
+</html>
